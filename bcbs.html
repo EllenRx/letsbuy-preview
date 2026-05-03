@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PBM Facts</title>
+    <title>Blue Cross Blue Shield Facts</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-    <script defer data-domain="letsbuypbm.com" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="letsbuybcbs.com" src="https://plausible.io/js/script.js"></script>
     <style>
         * {
             margin: 0;
@@ -87,7 +87,7 @@
         
         .big-number {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(8rem, 20vw, 15rem);
+            font-size: clamp(4rem, 12vw, 10rem);
             font-weight: 700;
             color: #FF3333;
             line-height: 0.8;
@@ -134,6 +134,24 @@
             color: #FFD700;
         }
         
+        .appeal-section {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .appeal-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: #FFD700;
+            margin-bottom: 2rem;
+        }
+        
         .final-cta {
             text-align: center;
             padding: 6rem 0;
@@ -169,45 +187,60 @@
 <body>
     <header>
         <div class="container">
-            <h1>PBMs</h1>
+            <h1>Blue Cross Blue Shield</h1>
             <a href="#cta" class="cta-button" onclick="plausible('Header CTA Click')">FIGHT WITH US</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h2>You can't buy PBMs. But you can beat them.</h2>
+            <h2>You can't buy Blue Cross Blue Shield. But you can beat them.</h2>
         </div>
     </section>
 
     <section class="stat-section">
         <div class="container">
-            <div class="big-number">3</div>
-            <div class="stat-label">Companies Control Market</div>
-            <div class="source">Source: CVS, Cigna, UnitedHealth own Big 3</div>
+            <div class="big-number">$2.67B</div>
+            <div class="stat-label">Antitrust Settlement</div>
+            <div class="source">Source: Supreme Court ruling, June 2024</div>
         </div>
     </section>
 
     <section class="stat-section">
         <div class="container">
-            <div class="big-number">$7.3B</div>
-            <div class="stat-label">Excess Markups</div>
-            <div class="source">Source: FTC staff report, January 2025</div>
+            <div class="big-number">$1.9B</div>
+            <div class="stat-label">Customer Reimbursement</div>
+            <div class="source">Source: Class action settlement distribution</div>
+        </div>
+    </section>
+
+    <section class="stat-section">
+        <div class="container">
+            <div class="big-number">36</div>
+            <div class="stat-label">Independent Plans</div>
+            <div class="source">Source: BCBS Association structure</div>
         </div>
     </section>
 
     <section class="quote-section">
         <div class="container">
             <div class="quote">
-                "The Big Three PBMs marked up numerous specialty generic drugs dispensed at their affiliated pharmacies by thousands of percent."
+                "The U.S. Supreme Court denied two petitions for certiorari from the only remaining objectors to the settlement in the case In re Blue Cross Blue Shield Antitrust Litigation."
             </div>
-            <div class="quote-attribution">Federal Trade Commission, January 2025</div>
+            <div class="quote-attribution">Supreme Court ruling, June 24, 2024</div>
+        </div>
+    </section>
+
+    <section class="appeal-section">
+        <div class="container">
+            <div class="appeal-text">When patients appeal, they win over 50% of the time.</div>
+            <div class="source">Source: Industry appeal success rate data</div>
         </div>
     </section>
 
     <section class="final-cta" id="cta">
         <div class="container">
-            <a href="https://ellenrx.com/?utm_source=letsbuypbm.com&utm_medium=satirical&utm_campaign=letsbuy" 
+            <a href="https://ellenrx.com/?utm_source=letsbuybcbs.com&utm_medium=satirical&utm_campaign=letsbuy" 
                class="cta-button" 
                onclick="plausible('CTA Click')"
                target="_blank">FIGHT WITH US</a>
@@ -222,7 +255,7 @@
 
     <footer class="disclaimer">
         <div class="container">
-            This is a satirical website. Not affiliated with any PBMs. No money is collected. All statistics are from public records and cited sources.
+            This is a satirical website. Not affiliated with Blue Cross Blue Shield. No money is collected. All statistics are from public records and cited sources.
         </div>
     </footer>
 </body>

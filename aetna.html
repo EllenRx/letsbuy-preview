@@ -4,135 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aetna</title>
-    <script defer data-domain="letsbuyaetna.com" src="https://plausible.io/js/script.js">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer data-domain="letsbuyaetna.com" src="https://plausible.io/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #0a0a0a; color: #ffffff; line-height: 1.6; }
-        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #002677; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #000000; color: #ffffff; line-height: 1.4; }
+        
+        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #7D3F98; }
         .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #002677; letter-spacing: 1px; }
-        .nav-items { display: flex; align-items: center; gap: 2rem; }
-        .pledge-btn { background: #002677; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 4px; font-weight: 600; text-decoration: none; transition: all 0.2s ease; }
-        .pledge-btn:hover { background: #003399; }
-        .hero-punchline { background: #0a0a0a; padding: 8rem 2rem 4rem; text-align: center; margin-top: 80px; }
-        .hero-punchline h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; color: #ffffff; margin-bottom: 3rem; line-height: 1.2; }
-        .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 4rem 2rem; }
-        .stat-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 38, 119, 0.2); border-radius: 8px; padding: 2.5rem 2rem; text-align: center; transition: border-color 0.2s ease; }
-        .stat-card:hover { border-color: #002677; }
-        .stat-number { font-size: 3.5rem; font-weight: 700; color: #002677; margin-bottom: 1rem; }
-        .stat-label { font-size: 1.1rem; color: #ffffff; margin-bottom: 1rem; font-weight: 500; }
-        .stat-source { font-size: 0.85rem; color: #888888; }
-        .record { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
-        .record h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: #002677; font-weight: 600; }
-        .record-item { background: rgba(255, 255, 255, 0.03); border-left: 3px solid #002677; padding: 2rem; margin-bottom: 1.5rem; border-radius: 0 6px 6px 0; }
-        .record-item h3 { color: #002677; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600; }
-        .record-item p { color: #cccccc; line-height: 1.6; }
-        .pledge-counter { background: #002677; padding: 4rem 2rem; text-align: center; color: white; }
-        .counter-grid { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-        .counter-item h3 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .counter-item p { font-size: 1.1rem; opacity: 0.9; }
-        .punchline { padding: 6rem 2rem; text-align: center; background: rgba(0, 38, 119, 0.05); }
-        .punchline h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 2rem; color: #ffffff; font-weight: 600; }
-        .appeal-stat { font-size: 1.2rem; color: #002677; margin: 2rem 0; font-weight: 500; }
-        .cta-button { display: inline-block; background: #002677; color: white; padding: 1.2rem 3rem; font-size: 1.2rem; font-weight: 600; text-decoration: none; border-radius: 6px; margin: 2rem 0; transition: background 0.2s ease; }
-        .cta-button:hover { background: #003399; }
-        .disclaimer { background: rgba(0, 0, 0, 0.5); padding: 3rem 2rem; text-align: center; color: #888888; font-size: 0.9rem; line-height: 1.7; }
-        @media (max-width: 768px) { .header-content { padding: 0 1rem; } .counter-grid { grid-template-columns: 1fr; gap: 2rem; } .stats-grid { grid-template-columns: 1fr; padding: 2rem 1rem; } .hero-punchline { padding: 6rem 1rem 2rem; } }
+        .logo { font-size: 1.2rem; font-weight: 700; color: #7D3F98; }
+        .cta-btn { background: #7D3F98; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+        .cta-btn:hover { background: #9333ea; }
+        
+        .hero { background: #000000; padding: 8rem 2rem 6rem; text-align: center; margin-top: 80px; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: #ffffff; margin-bottom: 2rem; line-height: 0.9; }
+        .hero .cta-primary { background: #7D3F98; color: white; padding: 1.5rem 3rem; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; margin-top: 3rem; display: inline-block; }
+        .hero .cta-primary:hover { background: #9333ea; }
+        
+        .stats { padding: 6rem 2rem; }
+        .stat-item { max-width: 800px; margin: 0 auto 8rem; text-align: center; }
+        .stat-number { font-size: clamp(4rem, 12vw, 8rem); font-weight: 900; color: #7D3F98; margin-bottom: 1rem; line-height: 0.8; }
+        .stat-label { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; color: #ffffff; margin-bottom: 1rem; }
+        .stat-source { font-size: 1rem; color: #888888; font-weight: 400; }
+        
+        .settled-facts { max-width: 900px; margin: 0 auto; padding: 6rem 2rem; }
+        .settled-facts h2 { font-size: 3rem; font-weight: 800; text-align: center; margin-bottom: 4rem; color: #7D3F98; }
+        .fact-item { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #333; }
+        .fact-item h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #7D3F98; }
+        .fact-item p { font-size: 1.1rem; color: #cccccc; line-height: 1.6; }
+        
+        .counter { background: #7D3F98; padding: 6rem 2rem; text-align: center; }
+        .counter h2 { font-size: 3rem; font-weight: 800; margin-bottom: 3rem; color: white; }
+        .counter-grid { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .counter-item h3 { font-size: 4rem; font-weight: 900; margin-bottom: 1rem; }
+        .counter-item p { font-size: 1.2rem; opacity: 0.9; }
+        
+        .bottom-cta { padding: 6rem 2rem; text-align: center; background: rgba(125, 63, 152, 0.03); }
+        .bottom-cta h2 { font-size: 3rem; font-weight: 800; margin-bottom: 2rem; color: #ffffff; }
+        .appeal-stat { font-size: 1.5rem; color: #7D3F98; margin: 2rem 0; font-weight: 600; }
+        .secondary-cta { background: transparent; border: 2px solid #7D3F98; color: #7D3F98; padding: 1rem 2rem; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 6px; margin: 1rem; }
+        .secondary-cta:hover { background: #7D3F98; color: white; }
+        
+        .social { text-align: center; padding: 3rem 2rem 2rem; }
+        .social p { font-size: 1.1rem; color: #888888; margin-bottom: 1rem; }
+        .social-links a { color: #7D3F98; text-decoration: none; margin: 0 1rem; font-weight: 600; }
+        .social-links a:hover { text-decoration: underline; }
+        
+        .disclaimer { background: rgba(0, 0, 0, 0.8); padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
+        
+        @media (max-width: 768px) { 
+            .header-content { padding: 0 1rem; } 
+            .counter-grid { grid-template-columns: 1fr; gap: 3rem; } 
+            .hero { padding: 6rem 1rem 4rem; }
+            .stats { padding: 4rem 1rem; }
+            .stat-item { margin-bottom: 6rem; }
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="logo">UNITEDHEALTH</div>
-            <div class="nav-items">
-                <a href="#punchline" class="pledge-btn">FIGHT YOUR DENIAL</a>
-            </div>
+            <div class="logo">AETNA</div>
+            <a href="https://ellenrx.com/?utm_source=letsbuyaetna&utm_medium=satirical&utm_campaign=letsbuy" class="cta-btn" onclick="plausible('Header CTA')">FIGHT WITH US</a>
         </div>
     </header>
 
-    <section class="hero-punchline">
-        <h1>You can't buy them.<br>But you can beat them.</h1>
+    <section class="hero">
+        <h1>You can't buy Aetna.<br>But you can beat them.</h1>
+        <a href="https://ellenrx.com/?utm_source=letsbuyaetna&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Hero CTA')">FIGHT WITH US</a>
     </section>
 
-    <section class="stats-grid">
-        <div class="stat-card">
-            <div class="stat-number">33%</div>
-            <div class="stat-label">Claims Denied in 2023</div>
-            <div class="stat-source">Twice the industry average - ValuePenguin/Boston Globe</div>
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">$924M</div>
+            <div class="stat-label">Operating Loss</div>
+            <div class="stat-source">Q3 2024 financial results</div>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">$26.3M</div>
-            <div class="stat-label">CEO Andrew Witty's 2024 Pay</div>
-            <div class="stat-source">348x median employee salary - AFL-CIO</div>
+        
+        <div class="stat-item">
+            <div class="stat-number">6.4%</div>
+            <div class="stat-label">Denial Rate</div>
+            <div class="stat-source">2023 Medicare Advantage prior authorizations</div>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">$400B</div>
-            <div class="stat-label">2024 Revenue</div>
-            <div class="stat-source">While denying life-saving care - MacroTrends</div>
+        
+        <div class="stat-item">
+            <div class="stat-number">$21.6M</div>
+            <div class="stat-label">CEO Compensation</div>
+            <div class="stat-source">Karen Lynch 2023 total pay</div>
         </div>
-        <div class="stat-card">
-            <div class="stat-number">90%</div>
-            <div class="stat-label">AI Algorithm Error Rate</div>
-            <div class="stat-source">nH Predict system - Federal lawsuit</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">$2B</div>
-            <div class="stat-label">Alleged Medicare Fraud</div>
-            <div class="stat-source">DOJ whistleblower case - NBC News</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Years in Prison</div>
-            <div class="stat-source">For executives who kill for profit</div>
+        
+        <div class="stat-item">
+            <div class="stat-number">$372.8B</div>
+            <div class="stat-label">CVS Revenue</div>
+            <div class="stat-source">2024 parent company total revenue</div>
         </div>
     </section>
 
-    <section class="record">
-        <h2>Facts</h2>
-        <div class="record-item">
-            <h3>2025: DOJ Criminal Investigation</h3>
-            <p>UnitedHealth Group faces ongoing Department of Justice criminal and civil investigations over Medicare billing practices, including allegations of inflated risk adjustment payments and fraudulent billing worth billions.</p>
+    <section class="settled-facts">
+        <h2>Settled Cases</h2>
+        
+        <div class="fact-item">
+            <h3>$118 Million Medicare Settlement</h3>
+            <p>CVS agreed to pay $118 million in 2026 to resolve DOJ allegations that Aetna knowingly submitted false diagnosis codes for morbid obesity from 2018-2023, inflating Medicare reimbursements.</p>
         </div>
-        <div class="record-item">
-            <h3>2023: AI Death Algorithm Lawsuit</h3>
-            <p>Families of deceased Medicare patients sued UnitedHealth for using NaviHealth's "nH Predict" AI with a 90% error rate to override doctors and deny medically necessary care, leading to patient deaths from premature discharge.</p>
+        
+        <div class="fact-item">
+            <h3>$8.4 Million Fraud Settlement</h3>
+            <p>Aetna and Optum paid $8.4 million in 2023 to settle lawsuit over using "dummy codes" to defraud Medicare Advantage, submitting false diagnosis information to increase government reimbursements.</p>
         </div>
-        <div class="record-item">
-            <h3>2017-2025: Medicare Advantage Fraud</h3>
-            <p>Multiple DOJ False Claims Act lawsuits allege UnitedHealth systematically inflated patient diagnoses to steal billions from Medicare, with whistleblower cases claiming at least $2 billion in overpayments.</p>
-        </div>
-        <div class="record-item">
-            <h3>2024: Antitrust Violations</h3>
-            <p>DOJ sued to block UnitedHealth's acquisition of Amedisys, citing anticompetitive concerns about the company's growing monopolistic control over American healthcare.</p>
+        
+        <div class="fact-item">
+            <h3>$2.5 Million New York Fine</h3>
+            <p>New York Department of Insurance fined Aetna $2.5 million for mishandled claims, improper treatment denials, unlicensed agents, and using outdated software preventing proper claims processing.</p>
         </div>
     </section>
 
-    <section class="pledge-counter" id="counter">
-        <h2>People Fighting Back</h2>
+    <section class="counter">
+        <h2>Appeals Work</h2>
         <div class="counter-grid">
             <div class="counter-item">
-                <h3 id="patronCount">47,329</h3>
+                <h3 id="patronCount">38,947</h3>
                 <p>Appeals Filed</p>
             </div>
             <div class="counter-item">
-                <h3 id="dollarCount">$2,847,893</h3>
-                <p>Denials Overturned</p>
+                <h3 id="dollarCount">$2,547,103</h3>
+                <p>Claims Approved</p>
             </div>
         </div>
     </section>
 
-    <section class="punchline" id="punchline">
-        <h2>You can't buy UnitedHealth Group.</h2>
-        <h2>But you can beat them.</h2>
+    <section class="bottom-cta">
+        <h2>You can't buy Aetna. But you can beat them.</h2>
         <p class="appeal-stat">82% of Medicare Advantage denials are overturned on appeal</p>
-        <p class="appeal-stat">They count on you giving up. Don't.</p>
-        <a href="https://ellenrx.com/?utm_source=letsbuyunited&utm_medium=satirical&utm_campaign=letsbuy" class="cta-button" onclick="plausible('CTA Click')">FIGHT YOUR DENIAL</a>
+        <div>
+            <a href="https://ellenrx.com/?utm_source=letsbuyaetna&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Bottom CTA Primary')">FIGHT WITH US</a>
+            <a href="https://ellenrx.com/?utm_source=letsbuyaetna&utm_medium=denial&utm_campaign=letsbuy" class="secondary-cta" onclick="plausible('Bottom CTA Secondary')">FIGHT YOUR DENIAL</a>
+        </div>
+    </section>
+
+    <section class="social">
+        <p>Follow @askellenrx for updates</p>
+        <div class="social-links">
+            <a href="https://instagram.com/askellenrx" target="_blank">Instagram</a>
+            <a href="https://tiktok.com/@askellenrx" target="_blank">TikTok</a>
+        </div>
     </section>
 
     <footer class="disclaimer">
-        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with UnitedHealth Group. No actual pledges or money are collected. All statistics are sourced from public records, government reports, and investigative journalism including: AFL-CIO Executive PayWatch, ValuePenguin, Boston Globe, MacroTrends, DOJ court filings, NBC News, federal lawsuits, ProPublica investigations, and Congressional testimony.</p>
+        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with Aetna or CVS Health. No actual pledges or money are collected. All statistics are sourced from public records, government reports, and court settlements.</p>
     </footer>
 
     <script>
