@@ -9,23 +9,23 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #000000; color: #ffffff; line-height: 1.4; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #003049; color: #FDF0D5; line-height: 1.4; }
         
-        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #F37A1F; }
+        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 48, 73, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #F37A1F; }
         .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
         .logo { font-size: 1.2rem; font-weight: 700; color: #F37A1F; }
-        .cta-btn { background: #F37A1F; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+        .cta-btn { background: #F37A1F; color: #FDF0D5; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
         .cta-btn:hover { background: #e6600b; }
         
-        .hero { background: #000000; padding: 8rem 2rem 6rem; text-align: center; margin-top: 80px; }
-        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: #ffffff; margin-bottom: 2rem; line-height: 0.9; }
-        .hero .cta-primary { background: #F37A1F; color: white; padding: 1.5rem 3rem; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; margin-top: 3rem; display: inline-block; }
+        .hero { background: #003049000; padding: 8rem 2rem 6rem; text-align: center; margin-top: 80px; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: #FDF0D5; margin-bottom: 2rem; line-height: 0.9; }
+        .hero .cta-primary { background: #F37A1F; color: #FDF0D5; padding: 1.5rem 3rem; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; margin-top: 3rem; display: inline-block; }
         .hero .cta-primary:hover { background: #e6600b; }
         
         .stats { padding: 6rem 2rem; }
         .stat-item { max-width: 800px; margin: 0 auto 8rem; text-align: center; }
         .stat-number { font-size: clamp(4rem, 12vw, 8rem); font-weight: 900; color: #F37A1F; margin-bottom: 1rem; line-height: 0.8; }
-        .stat-label { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; color: #ffffff; margin-bottom: 1rem; }
+        .stat-label { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; color: #FDF0D5; margin-bottom: 1rem; }
         .stat-source { font-size: 1rem; color: #888888; font-weight: 400; }
         
         .settled-facts { max-width: 900px; margin: 0 auto; padding: 6rem 2rem; }
@@ -35,23 +35,23 @@
         .fact-item p { font-size: 1.1rem; color: #cccccc; line-height: 1.6; }
         
         .counter { background: #F37A1F; padding: 6rem 2rem; text-align: center; }
-        .counter h2 { font-size: 3rem; font-weight: 800; margin-bottom: 3rem; color: white; }
+        .counter h2 { font-size: 3rem; font-weight: 800; margin-bottom: 3rem; color: #FDF0D5; }
         .counter-grid { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
         .counter-item h3 { font-size: 4rem; font-weight: 900; margin-bottom: 1rem; }
         .counter-item p { font-size: 1.2rem; opacity: 0.9; }
         
         .bottom-cta { padding: 6rem 2rem; text-align: center; background: rgba(243, 122, 31, 0.03); }
-        .bottom-cta h2 { font-size: 3rem; font-weight: 800; margin-bottom: 2rem; color: #ffffff; }
+        .bottom-cta h2 { font-size: 3rem; font-weight: 800; margin-bottom: 2rem; color: #FDF0D5; }
         .appeal-stat { font-size: 1.5rem; color: #F37A1F; margin: 2rem 0; font-weight: 600; }
         .secondary-cta { background: transparent; border: 2px solid #F37A1F; color: #F37A1F; padding: 1rem 2rem; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 6px; margin: 1rem; }
-        .secondary-cta:hover { background: #F37A1F; color: white; }
+        .secondary-cta:hover { background: #F37A1F; color: #FDF0D5; }
         
         .social { text-align: center; padding: 3rem 2rem 2rem; }
         .social p { font-size: 1.1rem; color: #888888; margin-bottom: 1rem; }
         .social-links a { color: #F37A1F; text-decoration: none; margin: 0 1rem; font-weight: 600; }
         .social-links a:hover { text-decoration: underline; }
         
-        .disclaimer { background: rgba(0, 0, 0, 0.8); padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
+        .disclaimer { background: rgba(0, 48, 73, 0.8); padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
         
         @media (max-width: 768px) { 
             .header-content { padding: 0 1rem; } 
