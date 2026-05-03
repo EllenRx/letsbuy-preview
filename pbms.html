@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUCK PBMs — PHARMACY BENEFIT MANAGERS EXPOSED</title>
+    <script defer data-domain="fuckpbms.com" src="https://plausible.io/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            border-bottom: 2px solid #004D00;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #DAA520;
+        }
+        
+        .nav-items {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .pledge-btn {
+            background: linear-gradient(45deg, #004D00, #DAA520);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .pledge-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(218, 165, 32, 0.4);
+        }
+        
+        .warning-banner {
+            background: linear-gradient(90deg, #004D00, #DAA520, #004D00);
+            background-size: 300% 100%;
+            animation: gradient-slide 3s ease-in-out infinite;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 80px;
+        }
+        
+        @keyframes gradient-slide {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 77, 0, 0.1), rgba(218, 165, 32, 0.1));
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #004D00, #DAA520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #cccccc;
+        }
+        
+        .big-three {
+            background: rgba(0, 77, 0, 0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .big-three h3 {
+            font-size: 2rem;
+            color: #DAA520;
+            margin-bottom: 2rem;
+        }
+        
+        .big-three-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .pbm-card {
+            background: rgba(218, 165, 32, 0.1);
+            border: 2px solid #004D00;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pbm-card h4 {
+            font-size: 1.5rem;
+            color: #DAA520;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pbm-parent {
+            font-size: 1rem;
+            color: #004D00;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(0, 77, 0, 0.05);
+            border: 1px solid rgba(0, 77, 0, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #004D00;
+            box-shadow: 0 10px 30px rgba(0, 77, 0, 0.3);
+        }
+        
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #DAA520;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-source {
+            font-size: 0.85rem;
+            color: #999999;
+            font-style: italic;
+        }
+        
+        .hero-punchline {
+            background: linear-gradient(135deg, rgba(0, 77, 0, 0.2), rgba(218, 165, 32, 0.2));
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 3px solid #004D00;
+            border-bottom: 3px solid #DAA520;
+        }
+        
+        .hero-punchline h2 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(45deg, #004D00, #DAA520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #DAA520, #004D00);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(218, 165, 32, 0.4);
+        }
+        
+        .disclaimer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #999999;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+            
+            .big-three-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">FUCK PBMs — DRUG MIDDLEMEN EXPOSED</div>
+            <div class="nav-items">
+                <a href="#punchline" class="pledge-btn">FIGHT BACK</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="warning-banner">
+        THREE COMPANIES CONTROL 80% OF ALL PRESCRIPTIONS
+    </div>
+
+    <section class="hero-punchline">
+        <h2>THE PRESCRIPTION DRUG<br>MAFIA EXPOSED</h2>
+    </section>
+
+    <section class="hero">
+        <h1>Pharmacy Benefit Managers</h1>
+        <p>The invisible middlemen jacking up your drug prices. Three companies control what medications you can get, where you can get them, and how much they cost. This is the hidden cartel bleeding Americans dry.</p>
+    </section>
+
+    <section class="big-three">
+        <h3>THE BIG THREE CONTROLLING YOU</h3>
+        <div class="big-three-grid">
+            <div class="pbm-card">
+                <h4>Express Scripts</h4>
+                <div class="pbm-parent">(Cigna)</div>
+                <p>25% market share - Settled with FTC for insulin price manipulation</p>
+            </div>
+            <div class="pbm-card">
+                <h4>CVS Caremark</h4>
+                <div class="pbm-parent">(CVS Health)</div>
+                <p>34% market share - Forces patients to their own pharmacies</p>
+            </div>
+            <div class="pbm-card">
+                <h4>OptumRx</h4>
+                <div class="pbm-parent">(UnitedHealth)</div>
+                <p>21% market share - Steers patients to UnitedHealth clinics</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">80%</div>
+            <div class="stat-label">Of Prescriptions Controlled</div>
+            <div class="stat-source">By just 3 companies</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">3,250</div>
+            <div class="stat-label">Independent Pharmacies Killed</div>
+            <div class="stat-source">In 2024 by PBM practices</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">$600B</div>
+            <div class="stat-label">Market They Control</div>
+            <div class="stat-source">For 270 million Americans</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">68%</div>
+            <div class="stat-label">Specialty Drug Revenue</div>
+            <div class="stat-source">Goes to their own pharmacies</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Pharmacies Get Lower Rates</div>
+            <div class="stat-source">From PBM spread pricing</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">$21M</div>
+            <div class="stat-label">CVS CEO Annual Pay</div>
+            <div class="stat-source">While patients suffer</div>
+        </div>
+    </section>
+
+    <section class="hero-punchline" id="punchline">
+        <h2>You can't buy them.<br>But you can beat them.</h2>
+        
+        <p style="font-size: 1.2rem; color: #DAA520; margin: 2rem 0;">FTC is suing all three for insulin price fixing</p>
+        <p style="font-size: 1.2rem; color: #DAA520; margin: 2rem 0;">Congress held hearings exposing their scams</p>
+        <p style="font-size: 1.2rem; color: #DAA520; margin: 2rem 0;">Fight every denial. Make them pay.</p>
+        
+        <a href="https://ellenrx.com/?utm_source=fuckpbms&utm_medium=satirical&utm_campaign=letsbuy" class="cta-button" onclick="plausible('CTA Click')">FIGHT YOUR DENIAL</a>
+    </section>
+
+    <footer class="disclaimer">
+        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with any PBM. No actual pledges collected. Statistics from FTC reports, Congressional hearings, AJMC, NCPA, Drug Topics, federal court filings, and healthcare research.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

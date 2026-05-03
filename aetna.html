@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetna 2.0 — OWNED BY THE PEOPLE</title>
+    <script defer data-domain="letsbuyaetna.com" src="https://plausible.io/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            border-bottom: 2px solid #7D3F98;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7D3F98;
+        }
+        
+        .nav-items {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-text {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pledge-btn {
+            background: linear-gradient(45deg, #7D3F98, #ffffff);
+            color: #1a1a1a;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .pledge-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(125, 63, 152, 0.4);
+        }
+        
+        .warning-banner {
+            background: linear-gradient(90deg, #7D3F98, #ffffff, #7D3F98);
+            background-size: 300% 100%;
+            animation: gradient-slide 3s ease-in-out infinite;
+            color: #1a1a1a;
+            text-align: center;
+            padding: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 80px;
+        }
+        
+        @keyframes gradient-slide {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(125, 63, 152, 0.1), rgba(255, 255, 255, 0.05));
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #7D3F98, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #cccccc;
+        }
+        
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(125, 63, 152, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #7D3F98;
+            box-shadow: 0 10px 30px rgba(125, 63, 152, 0.3);
+        }
+        
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7D3F98;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-source {
+            font-size: 0.85rem;
+            color: #999999;
+            font-style: italic;
+        }
+        
+        .record {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .record h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #7D3F98;
+        }
+        
+        .record-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #ffffff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .record-item h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .record-item p {
+            color: #cccccc;
+            line-height: 1.7;
+        }
+        
+        .pledge-counter {
+            background: linear-gradient(135deg, #7D3F98, #ffffff);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+        
+        .counter-grid {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .counter-item h3 {
+            font-size: 3rem;
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .counter-item p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            font-weight: 600;
+        }
+        
+        .punchline {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: rgba(125, 63, 152, 0.1);
+        }
+        
+        .punchline h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
+        .hero-punchline {
+            background: linear-gradient(135deg, rgba(125, 63, 152, 0.2), rgba(168, 85, 247, 0.2));
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 3px solid #7D3F98;
+            border-bottom: 3px solid #A855F7;
+        }
+        
+        .hero-punchline h2 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FF0000, #A855F7, #7D3F98);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .appeal-stat {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffffff, #7D3F98);
+            color: #1a1a1a;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+        }
+        
+        .disclaimer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #999999;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 1rem;
+            }
+            
+            .nav-text {
+                display: none;
+            }
+            
+            .counter-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">AETNA 2.0 — OWNED BY THE PEOPLE</div>
+            <div class="nav-items">
+                <span class="nav-text">JOIN THE MOVEMENT</span>
+                <a href="#punchline" class="pledge-btn">PLEDGE NOW</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="warning-banner">
+        ⚠️ BREAKING: $118 MILLION MEDICARE FRAUD SETTLEMENT ⚠️
+    </div>
+
+    <section class="hero-punchline">
+        <h2>You can't buy Aetna.<br>But you can beat them.</h2>
+    </section>
+
+    <section class="hero">
+        <h1>The CVS Pharmacy of Death</h1>
+        <p>Aetna knowingly submitted false diagnosis codes for years, stole millions from Medicare, and is now hemorrhaging nearly $1 billion in losses. The grift is collapsing.</p>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">$924M</div>
+            <div class="stat-label">Operating Loss in Q3 2024</div>
+            <div class="stat-source">Aetna bleeding money - Healthcare Finance News</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">$118M</div>
+            <div class="stat-label">Medicare Fraud Settlement</div>
+            <div class="stat-source">False diagnosis codes 2018-2023 - DOJ</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">$21.6M</div>
+            <div class="stat-label">Karen Lynch's 2023 Pay</div>
+            <div class="stat-source">392x median worker - Wikipedia</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">$372.8B</div>
+            <div class="stat-label">CVS 2024 Revenue</div>
+            <div class="stat-source">While Aetna collapses - CVS Annual Review</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">6.4%</div>
+            <div class="stat-label">Medicare Advantage Denial Rate</div>
+            <div class="stat-source">2023 prior authorizations - Industry data</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-number">$2.5M</div>
+            <div class="stat-label">New York State Fine</div>
+            <div class="stat-source">Mishandled claims, improper denials - Wikipedia</div>
+        </div>
+    </section>
+
+    <section class="record">
+        <h2>The Record</h2>
+        
+        <div class="record-item">
+            <h3>2026: $118 Million Medicare Fraud Settlement</h3>
+            <p>DOJ settlement revealed Aetna knowingly submitted false diagnosis codes for morbid obesity from 2018-2023, stealing millions from Medicare by claiming patients were obese when their BMI indicated otherwise. CVS agreed to pay $118 million to resolve fraud allegations.</p>
+        </div>
+        
+        <div class="record-item">
+            <h3>2024: Financial Collapse and Management Shakeup</h3>
+            <p>Aetna posted nearly $1 billion in operating losses as CVS CEO Karen Lynch took over "day-to-day management" of the failing insurer. Company announced exit from ACA individual markets in 2026 after years of underperformance.</p>
+        </div>
+        
+        <div class="record-item">
+            <h3>2023: "Dummy Codes" Fraud Settlement</h3>
+            <p>Aetna and Optum paid $8.4 million to settle lawsuit over using "dummy codes" to defraud Medicare Advantage, submitting false diagnosis information to increase government reimbursements while denying patient care.</p>
+        </div>
+        
+        <div class="record-item">
+            <h3>Ongoing: State Fines for Claims Mishandling</h3>
+            <p>New York Department of Insurance fined Aetna $2.5 million for mishandled claims, improper treatment denials, unlicensed agents, and using outdated software that prevented proper claims processing.</p>
+        </div>
+    </section>
+
+    <section class="pledge-counter" id="counter">
+        <h2>People Power Rising</h2>
+        <div class="counter-grid">
+            <div class="counter-item">
+                <h3 id="patronCount">38,947</h3>
+                <p>Patriots Pledged</p>
+            </div>
+            <div class="counter-item">
+                <h3 id="dollarCount">$2,547,103</h3>
+                <p>Dollars Pledged</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="punchline" id="punchline">
+        <h2>You can't buy Aetna.</h2>
+        <h2>But you can beat them.</h2>
+        
+        <p class="appeal-stat">82% of Medicare Advantage denials are overturned on appeal</p>
+        <p class="appeal-stat">They're already losing. Don't let them take you down with them.</p>
+        
+        <a href="https://ellenrx.com/?utm_source=letsbuyaetna&utm_medium=satirical&utm_campaign=letsbuy" class="cta-button" onclick="plausible('CTA Click')">FIGHT YOUR DENIAL</a>
+    </section>
+
+    <footer class="disclaimer">
+        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with Aetna or CVS Health. No actual pledges or money are collected. All statistics are sourced from public records, government reports, and investigative journalism including: Department of Justice settlements, CVS Health financial reports, Healthcare Finance News, Wikipedia, Becker's Healthcare reporting, and federal court filings.</p>
+    </footer>
+
+    <script>
+        // Animated counters
+        function animateCounter(element, start, end, duration, prefix = '', suffix = '') {
+            let startTimestamp = null;
+            
+            function step(timestamp) {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                
+                if (prefix === '$') {
+                    element.textContent = prefix + current.toLocaleString() + suffix;
+                } else {
+                    element.textContent = prefix + current.toLocaleString() + suffix;
+                }
+                
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+            
+            window.requestAnimationFrame(step);
+        }
+
+        // Slow counter increase
+        function incrementCounters() {
+            const patronEl = document.getElementById('patronCount');
+            const dollarEl = document.getElementById('dollarCount');
+            
+            setInterval(() => {
+                // Add 1-3 patrons randomly
+                const currentPatrons = parseInt(patronEl.textContent.replace(/,/g, ''));
+                const newPatrons = currentPatrons + Math.floor(Math.random() * 3) + 1;
+                patronEl.textContent = newPatrons.toLocaleString();
+                
+                // Add $45-500 randomly
+                const currentDollars = parseInt(dollarEl.textContent.replace(/[$,]/g, ''));
+                const newDollars = currentDollars + Math.floor(Math.random() * 455) + 45;
+                dollarEl.textContent = '$' + newDollars.toLocaleString();
+                
+            }, Math.random() * 8000 + 3000); // Every 3-11 seconds
+        }
+
+        // Start counter animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(incrementCounters, 2000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
