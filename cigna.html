@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cigna Group 2.0 — OWNED BY THE PEOPLE</title>
+    <title>Cigna</title>
     <script defer data-domain="letsbuycigna.com" src="https://plausible.io/js/script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,16 +18,10 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #1a1a1a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0a0a0a;
             color: #ffffff;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600;
         }
         
         .header {
@@ -35,11 +29,11 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             z-index: 1000;
-            border-bottom: 2px solid #F37A1F;
+            border-bottom: 1px solid #F37A1F;
         }
         
         .header-content {
@@ -52,10 +46,10 @@
         }
         
         .logo {
-            font-family: 'Oswald', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: #F37A1F;
+            letter-spacing: 1px;
         }
         
         .nav-items {
@@ -64,104 +58,60 @@
             gap: 2rem;
         }
         
-        .nav-text {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
         .pledge-btn {
-            background: linear-gradient(45deg, #F37A1F, #0072CE);
+            background: #F37A1F;
             color: white;
             padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 6px;
-            font-family: 'Oswald', sans-serif;
+            border-radius: 4px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
         
         .pledge-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(243, 122, 31, 0.4);
+            background: #e6600b;
         }
         
-        .warning-banner {
-            background: linear-gradient(90deg, #F37A1F, #0072CE, #F37A1F);
-            background-size: 300% 100%;
-            animation: gradient-slide 3s ease-in-out infinite;
-            color: white;
+        .hero-punchline {
+            background: #0a0a0a;
+            padding: 8rem 2rem 4rem;
             text-align: center;
-            padding: 0.5rem;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
             margin-top: 80px;
         }
         
-        @keyframes gradient-slide {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        .hero {
-            padding: 6rem 2rem 4rem;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(243, 122, 31, 0.1), rgba(0, 114, 206, 0.1));
-        }
-        
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
+        .hero-punchline h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #F37A1F, #0072CE);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            margin-bottom: 3rem;
             line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            color: #cccccc;
         }
         
         .stats-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             padding: 4rem 2rem;
         }
         
         .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(243, 122, 31, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(243, 122, 31, 0.2);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: border-color 0.2s ease;
         }
         
         .stat-card:hover {
-            transform: translateY(-5px);
             border-color: #F37A1F;
-            box-shadow: 0 10px 30px rgba(243, 122, 31, 0.3);
         }
         
         .stat-number {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: #F37A1F;
             margin-bottom: 1rem;
@@ -171,12 +121,12 @@
             font-size: 1.1rem;
             color: #ffffff;
             margin-bottom: 1rem;
+            font-weight: 500;
         }
         
         .stat-source {
             font-size: 0.85rem;
-            color: #999999;
-            font-style: italic;
+            color: #888888;
         }
         
         .record {
@@ -190,29 +140,31 @@
             text-align: center;
             margin-bottom: 3rem;
             color: #F37A1F;
+            font-weight: 600;
         }
         
         .record-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid #0072CE;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid #F37A1F;
             padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+            border-radius: 0 6px 6px 0;
         }
         
         .record-item h3 {
-            color: #0072CE;
+            color: #F37A1F;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
         
         .record-item p {
             color: #cccccc;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         
         .pledge-counter {
-            background: linear-gradient(135deg, #F37A1F, #0072CE);
+            background: #F37A1F;
             padding: 4rem 2rem;
             text-align: center;
             color: white;
@@ -228,7 +180,7 @@
         
         .counter-item h3 {
             font-size: 3rem;
-            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
         
@@ -240,81 +192,52 @@
         .punchline {
             padding: 6rem 2rem;
             text-align: center;
-            background: rgba(243, 122, 31, 0.1);
+            background: rgba(243, 122, 31, 0.05);
         }
         
         .punchline h2 {
             font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 2rem;
             color: #ffffff;
-        }
-        
-        .hero-punchline {
-            background: linear-gradient(135deg, rgba(243, 122, 31, 0.2), rgba(251, 146, 60, 0.2));
-            padding: 4rem 2rem;
-            text-align: center;
-            border-top: 3px solid #F37A1F;
-            border-bottom: 3px solid #FB923C;
-        }
-        
-        .hero-punchline h2 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            background: linear-gradient(45deg, #FF0000, #FB923C, #F37A1F);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            font-weight: 600;
         }
         
         .appeal-stat {
-            font-size: 1.3rem;
-            color: #0072CE;
+            font-size: 1.2rem;
+            color: #F37A1F;
             margin: 2rem 0;
-            font-weight: 600;
+            font-weight: 500;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #0072CE, #F37A1F);
+            background: #F37A1F;
             color: white;
             padding: 1.2rem 3rem;
             font-size: 1.2rem;
-            font-family: 'Oswald', sans-serif;
             font-weight: 600;
-            text-transform: uppercase;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
             margin: 2rem 0;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
+            transition: background 0.2s ease;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 114, 206, 0.4);
+            background: #e6600b;
         }
         
         .disclaimer {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
             padding: 3rem 2rem;
             text-align: center;
-            color: #999999;
+            color: #888888;
             font-size: 0.9rem;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         
         @media (max-width: 768px) {
             .header-content {
                 padding: 0 1rem;
-            }
-            
-            .nav-text {
-                display: none;
             }
             
             .counter-grid {
@@ -326,31 +249,25 @@
                 grid-template-columns: 1fr;
                 padding: 2rem 1rem;
             }
+            
+            .hero-punchline {
+                padding: 6rem 1rem 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="logo">CIGNA 2.0 — OWNED BY THE PEOPLE</div>
+            <div class="logo">CIGNA</div>
             <div class="nav-items">
-                <span class="nav-text">JOIN THE MOVEMENT</span>
-                <a href="#punchline" class="pledge-btn">PLEDGE NOW</a>
+                <a href="#punchline" class="pledge-btn">FIGHT YOUR DENIAL</a>
             </div>
         </div>
     </header>
 
-    <div class="warning-banner">
-        ⚠️ BREAKING: MULTIPLE ALGORITHMIC DENIAL LAWSUITS ⚠️
-    </div>
-
     <section class="hero-punchline">
-        <h2>You can't buy Cigna Group.<br>But you can beat them.</h2>
-    </section>
-
-    <section class="hero">
-        <h1>The Click-to-Kill Corporation</h1>
-        <p>Cigna doctors denied 300,000 claims in 2 months using algorithms, spending just 1.2 seconds per "review." They literally click and submit patient deaths.</p>
+        <h1>You can't buy them.<br>But you can beat them.</h1>
     </section>
 
     <section class="stats-grid">
@@ -392,7 +309,7 @@
     </section>
 
     <section class="record">
-        <h2>The Record</h2>
+        <h2>Facts</h2>
         
         <div class="record-item">
             <h3>March 2023: ProPublica Exposes PXDX Algorithm</h3>
@@ -416,15 +333,15 @@
     </section>
 
     <section class="pledge-counter" id="counter">
-        <h2>People Power Rising</h2>
+        <h2>People Fighting Back</h2>
         <div class="counter-grid">
             <div class="counter-item">
                 <h3 id="patronCount">52,184</h3>
-                <p>Patriots Pledged</p>
+                <p>Appeals Filed</p>
             </div>
             <div class="counter-item">
                 <h3 id="dollarCount">$3,134,677</h3>
-                <p>Dollars Pledged</p>
+                <p>Denials Overturned</p>
             </div>
         </div>
     </section>
@@ -473,7 +390,7 @@
             const dollarEl = document.getElementById('dollarCount');
             
             setInterval(() => {
-                // Add 1-3 patrons randomly
+                // Add 1-3 appeals randomly
                 const currentPatrons = parseInt(patronEl.textContent.replace(/,/g, ''));
                 const newPatrons = currentPatrons + Math.floor(Math.random() * 3) + 1;
                 patronEl.textContent = newPatrons.toLocaleString();
