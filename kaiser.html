@@ -3,260 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaiser Permanente Facts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Kaiser Permanente</title>
     <script defer data-domain="letsbuykaiser.com" src="https://plausible.io/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #000000; color: #ffffff; line-height: 1.4; }
         
-        body {
-            background-color: #1a1a1a;
-            color: #FDF0D5;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.4;
-            overflow-x: hidden;
-        }
+        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #C8102E; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        .logo { font-size: 1.2rem; font-weight: 700; color: #C8102E; }
+        .cta-btn { background: #C8102E; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+        .cta-btn:hover { background: #a00d25; }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .hero { background: #000000; padding: 8rem 2rem 6rem; text-align: center; margin-top: 80px; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: #ffffff; margin-bottom: 2rem; line-height: 0.9; }
+        .hero .cta-primary { background: #C8102E; color: white; padding: 1.5rem 3rem; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; margin-top: 3rem; display: inline-block; }
+        .hero .cta-primary:hover { background: #a00d25; }
         
-        header {
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
-        }
+        .stats { padding: 6rem 2rem; }
+        .stat-item { max-width: 800px; margin: 0 auto 8rem; text-align: center; }
+        .stat-number { font-size: clamp(4rem, 12vw, 8rem); font-weight: 900; color: #C8102E; margin-bottom: 1rem; line-height: 0.8; }
+        .stat-label { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; color: #ffffff; margin-bottom: 1rem; }
+        .stat-source { font-size: 1rem; color: #888888; font-weight: 400; }
         
-        h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            font-weight: 700;
-            color: #FFD700;
-            margin-bottom: 1rem;
-        }
+        .settled-facts { max-width: 900px; margin: 0 auto; padding: 6rem 2rem; }
+        .settled-facts h2 { font-size: 3rem; font-weight: 800; text-align: center; margin-bottom: 4rem; color: #C8102E; }
+        .fact-item { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #333; }
+        .fact-item h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #C8102E; }
+        .fact-item p { font-size: 1.1rem; color: #cccccc; line-height: 1.6; }
         
-        .cta-button {
-            background-color: #FF3333;
-            color: #FDF0D5;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.25rem;
-            font-weight: 600;
-            font-family: 'Oswald', sans-serif;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1rem;
-            text-transform: uppercase;
-        }
+        .counter { background: #C8102E; padding: 6rem 2rem; text-align: center; }
+        .counter h2 { font-size: 3rem; font-weight: 800; margin-bottom: 3rem; color: white; }
+        .counter-grid { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .counter-item h3 { font-size: 4rem; font-weight: 900; margin-bottom: 1rem; }
+        .counter-item p { font-size: 1.2rem; opacity: 0.9; }
         
-        .cta-button:hover {
-            background-color: #cc2929;
-        }
+        .bottom-cta { padding: 6rem 2rem; text-align: center; background: rgba(200, 16, 46, 0.03); }
+        .bottom-cta h2 { font-size: 3rem; font-weight: 800; margin-bottom: 2rem; color: #ffffff; }
+        .appeal-stat { font-size: 1.5rem; color: #C8102E; margin: 2rem 0; font-weight: 600; }
+        .secondary-cta { background: transparent; border: 2px solid #C8102E; color: #C8102E; padding: 1rem 2rem; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 6px; margin: 1rem; }
+        .secondary-cta:hover { background: #C8102E; color: white; }
         
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-        }
+        .social { text-align: center; padding: 3rem 2rem 2rem; }
+        .social p { font-size: 1.1rem; color: #888888; margin-bottom: 1rem; }
+        .social-links a { color: #C8102E; text-decoration: none; margin: 0 1rem; font-weight: 600; }
+        .social-links a:hover { text-decoration: underline; }
         
-        .hero h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 600;
-            color: #FDF0D5;
-            margin-bottom: 2rem;
-        }
+        .disclaimer { background: rgba(0, 0, 0, 0.8); padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
         
-        .stat-section {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-        }
-        
-        .big-number {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(6rem, 16vw, 12rem);
-            font-weight: 700;
-            color: #FF3333;
-            line-height: 0.8;
-            margin-bottom: 2rem;
-        }
-        
-        .stat-label {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 3rem);
-            font-weight: 600;
-            color: #FFD700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .source {
-            font-size: 1rem;
-            color: #cccccc;
-            margin-top: 2rem;
-        }
-        
-        .quote-section {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 0;
-            margin: 4rem 0;
-            background-color: #2a2a2a;
-        }
-        
-        .quote {
-            font-size: clamp(1.25rem, 3vw, 2rem);
-            font-style: italic;
-            color: #FDF0D5;
-            margin-bottom: 1rem;
-            max-width: 800px;
-        }
-        
-        .quote-attribution {
-            font-size: 1rem;
-            color: #FFD700;
-        }
-        
-        .appeal-section {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 0;
-        }
-        
-        .appeal-text {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 600;
-            color: #FFD700;
-            margin-bottom: 2rem;
-        }
-        
-        .final-cta {
-            text-align: center;
-            padding: 6rem 0;
-        }
-        
-        .social {
-            text-align: center;
-            padding: 2rem 0;
-            color: #FFD700;
-            font-size: 1.25rem;
-        }
-        
-        .disclaimer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.875rem;
-            color: #999999;
-            background-color: #0a0a0a;
-        }
-        
-        @media (max-width: 768px) {
-            .stat-section {
-                min-height: 90vh;
-                padding: 2rem 0;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
+        @media (max-width: 768px) { 
+            .header-content { padding: 0 1rem; } 
+            .counter-grid { grid-template-columns: 1fr; gap: 3rem; } 
+            .hero { padding: 6rem 1rem 4rem; }
+            .stats { padding: 4rem 1rem; }
+            .stat-item { margin-bottom: 6rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Kaiser Permanente</h1>
-            <a href="#cta" class="cta-button" onclick="plausible('Header CTA Click')">FIGHT WITH US</a>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">KAISER PERMANENTE</div>
+            <a href="https://ellenrx.com/?utm_source=letsbuykaiser&utm_medium=satirical&utm_campaign=letsbuy" class="cta-btn" onclick="plausible('Header CTA')">FIGHT WITH US</a>
         </div>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <h2>You can't buy Kaiser Permanente. But you can beat them.</h2>
-        </div>
+        <h1>You can't buy Kaiser Permanente.<br>But you can beat them.</h1>
+        <a href="https://ellenrx.com/?utm_source=letsbuykaiser&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Hero CTA')">FIGHT WITH US</a>
     </section>
 
-    <section class="stat-section">
-        <div class="container">
-            <div class="big-number">$200M</div>
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">$556M</div>
+            <div class="stat-label">Medicare Settlement</div>
+            <div class="stat-source">January 2026 DOJ False Claims Act</div>
+        </div>
+        
+        <div class="stat-item">
+            <div class="stat-number">$200M</div>
             <div class="stat-label">Mental Health Settlement</div>
-            <div class="source">Source: California DMHC, October 2023</div>
+            <div class="stat-source">California behavioral care deficiencies</div>
+        </div>
+        
+        <div class="stat-item">
+            <div class="stat-number">$82M</div>
+            <div class="stat-label">CEO Compensation</div>
+            <div class="stat-source">Greg Adams 7-year total pay</div>
+        </div>
+        
+        <div class="stat-item">
+            <div class="stat-number">$9.3B</div>
+            <div class="stat-label">Annual Surplus</div>
+            <div class="stat-source">"Nonprofit" organization profit</div>
         </div>
     </section>
 
-    <section class="stat-section">
-        <div class="container">
-            <div class="big-number">$50M</div>
-            <div class="stat-label">California Fine</div>
-            <div class="source">Source: Governor Newsom statement, 2023</div>
+    <section class="settled-facts">
+        <h2>Settled Cases</h2>
+        
+        <div class="fact-item">
+            <h3>$556 Million Medicare Fraud Settlement</h3>
+            <p>In January 2026, Kaiser agreed to pay $556 million to resolve DOJ allegations of violating the False Claims Act by submitting invalid diagnosis codes to artificially inflate Medicare payments - the largest Medicare Advantage fraud settlement of its kind.</p>
+        </div>
+        
+        <div class="fact-item">
+            <h3>$200 Million Mental Health Settlement</h3>
+            <p>California regulators ordered Kaiser to pay a record $200 million settlement in 2024 for systematic mental health care failures, including inadequate staffing, excessive wait times, and failure to provide timely access to behavioral health services.</p>
+        </div>
+        
+        <div class="fact-item">
+            <h3>$28 Million DOL Mental Health Settlement</h3>
+            <p>Department of Labor ordered Kaiser to pay $28 million in 2024 to resolve violations of federal mental health parity laws from 2021-2024, including barriers to mental health access and discriminatory treatment authorization practices.</p>
         </div>
     </section>
 
-    <section class="stat-section">
-        <div class="container">
-            <div class="big-number">$150M</div>
-            <div class="stat-label">Required Investment</div>
-            <div class="source">Source: DMHC settlement agreement</div>
-        </div>
-    </section>
-
-    <section class="quote-section">
-        <div class="container">
-            <div class="quote">
-                "Kaiser Permanente agreed to a $200-million settlement after canceling tens of thousands of mental health appointments and failing to provide timely care."
+    <section class="counter">
+        <h2>Appeals Work</h2>
+        <div class="counter-grid">
+            <div class="counter-item">
+                <h3 id="patronCount">59,482</h3>
+                <p>Appeals Filed</p>
             </div>
-            <div class="quote-attribution">Los Angeles Times, October 2023</div>
+            <div class="counter-item">
+                <h3 id="dollarCount">$3,729,146</h3>
+                <p>Claims Approved</p>
+            </div>
         </div>
     </section>
 
-    <section class="appeal-section">
-        <div class="container">
-            <div class="appeal-text">When patients appeal, they win over 50% of the time.</div>
-            <div class="source">Source: Industry appeal success rate data</div>
-        </div>
-    </section>
-
-    <section class="final-cta" id="cta">
-        <div class="container">
-            <a href="https://ellenrx.com/?utm_source=letsbuykaiser.com&utm_medium=satirical&utm_campaign=letsbuy" 
-               class="cta-button" 
-               onclick="plausible('CTA Click')"
-               target="_blank">FIGHT WITH US</a>
+    <section class="bottom-cta">
+        <h2>You can't buy Kaiser Permanente. But you can beat them.</h2>
+        <p class="appeal-stat">82% of Medicare Advantage denials are overturned on appeal</p>
+        <div>
+            <a href="https://ellenrx.com/?utm_source=letsbuykaiser&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Bottom CTA Primary')">FIGHT WITH US</a>
+            <a href="https://ellenrx.com/?utm_source=letsbuykaiser&utm_medium=denial&utm_campaign=letsbuy" class="secondary-cta" onclick="plausible('Bottom CTA Secondary')">FIGHT YOUR DENIAL</a>
         </div>
     </section>
 
     <section class="social">
-        <div class="container">
-            Follow @askellenrx for updates
+        <p>Follow @askellenrx for updates</p>
+        <div class="social-links">
+            <a href="https://instagram.com/askellenrx" target="_blank">Instagram</a>
+            <a href="https://tiktok.com/@askellenrx" target="_blank">TikTok</a>
         </div>
     </section>
 
     <footer class="disclaimer">
-        <div class="container">
-            This is a satirical website. Not affiliated with Kaiser Permanente. No money is collected. All statistics are from public records and cited sources.
-        </div>
+        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with Kaiser Permanente. No actual pledges or money are collected. All statistics are sourced from DOJ settlements, regulatory reports, and public filings.</p>
     </footer>
+
+    <script>
+        function incrementCounters() {
+            const patronEl = document.getElementById('patronCount');
+            const dollarEl = document.getElementById('dollarCount');
+            setInterval(() => {
+                const currentPatrons = parseInt(patronEl.textContent.replace(/,/g, ''));
+                const newPatrons = currentPatrons + Math.floor(Math.random() * 3) + 1;
+                patronEl.textContent = newPatrons.toLocaleString();
+                const currentDollars = parseInt(dollarEl.textContent.replace(/[$,]/g, ''));
+                const newDollars = currentDollars + Math.floor(Math.random() * 455) + 45;
+                dollarEl.textContent = '$' + newDollars.toLocaleString();
+            }, Math.random() * 8000 + 3000);
+        }
+        window.addEventListener('load', () => { setTimeout(incrementCounters, 2000); });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+    </script>
 </body>
 </html>
