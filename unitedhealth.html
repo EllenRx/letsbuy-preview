@@ -4,94 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UnitedHealthcare Facts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
     <script defer data-domain="letsbuyunited.com" src="https://plausible.io/js/script.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { background-color: #000000; color: #ffffff; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.4; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-        /* HEADER */
-        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 2px solid #DC143C; }
-        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-        .logo { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; color: #ffffff; text-transform: uppercase; }
-        .cta-btn { background: #DC143C; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 0; font-weight: 700; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .cta-btn:hover { background: #a01030; }
-
-        /* HERO */
-        .hero { padding: 10rem 2rem 6rem; text-align: center; }
-        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; color: #DC143C; margin-bottom: 1.5rem; line-height: 0.9; text-transform: uppercase; }
-        .hero h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 400; color: #cccccc; margin-bottom: 2rem; }
-
-        /* FULL-BLEED STAT */
-        .stat-fullbleed { padding: 8rem 2rem; text-align: center; }
-        .stat-fullbleed .big-number { font-family: 'Oswald', sans-serif; font-size: clamp(8rem, 22vw, 16rem); font-weight: 700; color: #DC143C; line-height: 0.8; }
-        .stat-fullbleed .stat-label { font-family: 'Oswald', sans-serif; font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 600; color: #ffffff; text-transform: uppercase; margin-top: 1rem; }
-        .stat-fullbleed .source { font-size: 0.95rem; color: #888888; margin-top: 1.5rem; }
-
-        /* SPLIT TWO-COLUMN */
-        .split-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 50vh; }
-        .split-left { background: #0a0a0a; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 4rem 2rem; text-align: center; }
-        .split-left .big-number { font-family: 'Oswald', sans-serif; font-size: clamp(5rem, 14vw, 10rem); font-weight: 700; color: #DC143C; line-height: 0.8; }
-        .split-right { display: flex; flex-direction: column; justify-content: center; padding: 4rem 3rem; border-left: 4px solid #DC143C; }
-        .split-right .stat-label { font-family: 'Oswald', sans-serif; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; color: #ffffff; text-transform: uppercase; margin-bottom: 1rem; }
-        .split-right .source { font-size: 0.95rem; color: #888888; }
-        .split-right p { font-size: 1.1rem; color: #cccccc; line-height: 1.6; margin-top: 1rem; }
-
-        /* RED GRADIENT BANNER */
-        .red-banner { background: linear-gradient(135deg, #DC143C 0%, #5a0a1a 40%, #000000 100%); padding: 5rem 2rem; text-align: center; }
-        .red-banner .banner-text { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 3.5rem); font-weight: 700; color: #ffffff; max-width: 900px; margin: 0 auto; text-transform: uppercase; }
-        .red-banner .source { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-top: 1.5rem; }
-
-        /* PULL QUOTE */
-        .pull-quote { padding: 5rem 2rem; }
-        .pull-quote-inner { max-width: 800px; margin: 0 auto; border-left: 6px solid #DC143C; padding-left: 2rem; }
-        .pull-quote-inner blockquote { font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-style: italic; color: #ffffff; line-height: 1.6; margin-bottom: 1rem; }
-        .pull-quote-inner cite { font-size: 1rem; color: #888888; font-style: normal; }
-
-        /* TICKER BAR */
-        .ticker-bar { background: #111111; border-top: 2px solid #DC143C; border-bottom: 2px solid #DC143C; padding: 2rem 0; overflow: hidden; }
-        .ticker-content { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .ticker-item { text-align: center; }
-        .ticker-item .number { font-family: 'Oswald', sans-serif; font-size: 2.5rem; font-weight: 700; color: #DC143C; }
-        .ticker-item .label { font-size: 0.85rem; color: #888888; text-transform: uppercase; letter-spacing: 0.1em; }
-
-        /* CTA */
-        .final-cta { text-align: center; padding: 6rem 2rem; }
-        .cta-button-large { background: #DC143C; color: #fff; padding: 1.25rem 3rem; font-size: 1.2rem; font-weight: 700; font-family: 'Oswald', sans-serif; text-decoration: none; display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; border: none; cursor: pointer; }
-        .cta-button-large:hover { background: #a01030; }
-
-        /* SOCIAL & DISCLAIMER */
-        .social { text-align: center; padding: 3rem 2rem; }
-        .social p { font-size: 1.1rem; color: #888888; }
-        .disclaimer { background: #0a0a0a; padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0A1628;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background-color: #FF0000;
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: 'Oswald', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            background-color: #cc0000;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .big-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 700;
+            color: #FF0000;
+            line-height: 0.8;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .source {
+            font-size: 1rem;
+            color: #999999;
+            margin-top: 2rem;
+        }
+        
+        .quote-section {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 0;
+            margin: 4rem 0;
+            background-color: #002868;
+            border: 1px solid #002868;
+        }
+        
+        .quote {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+        
+        .quote-attribution {
+            font-size: 1rem;
+            color: #999999;
+        }
+        
+        .appeal-section {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .appeal-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: #FF0000;
+            margin-bottom: 2rem;
+        }
+        
+        .final-cta {
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .social {
+            text-align: center;
+            padding: 2rem 0;
+            color: #999999;
+            font-size: 1.25rem;
+        }
+        
+        .disclaimer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+            color: #999999;
+            background-color: #002868;
+            border-top: 1px solid #002868;
+        }
+        
         @media (max-width: 768px) {
-            .split-section { grid-template-columns: 1fr; }
-            .split-right { border-left: none; border-top: 4px solid #DC143C; }
-            .ticker-content { flex-direction: column; }
-            .header-content { padding: 0 1rem; }
+            .stat-section {
+                min-height: 90vh;
+                padding: 2rem 0;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">UnitedHealthcare</div>
-            <a href="https://ellenrx.com/?utm_source=letsbuyunited.com&utm_medium=satirical&utm_campaign=letsbuy" class="cta-btn" onclick="plausible('Header CTA Click')">FIGHT WITH US</a>
+    <header>
+        <div class="container">
+            <h1>UnitedHealthcare</h1>
+            <a href="#cta" class="cta-button" onclick="plausible('Header CTA Click')">FIGHT WITH US</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>UnitedHealthcare</h1>
             <h2>You can't buy UnitedHealthcare. But you can beat them.</h2>
-            <a href="#cta" class="cta-btn" onclick="plausible('Hero CTA Click')">FIGHT WITH US</a>
         </div>
     </section>
 
-    <section class="stat-fullbleed">
+    <section class="stat-section">
         <div class="container">
             <div class="big-number">32%</div>
             <div class="stat-label">Claims Denied</div>
@@ -99,39 +208,15 @@
         </div>
     </section>
 
-    <section class="split-section">
-        <div class="split-left">
+    <section class="stat-section">
+        <div class="container">
             <div class="big-number">#1</div>
-        </div>
-        <div class="split-right">
             <div class="stat-label">Highest Denial Rate</div>
-            <p>Among all major insurers analyzed, UnitedHealthcare leads the nation in claim denials.</p>
             <div class="source">Source: KSDK analysis of major insurers</div>
         </div>
     </section>
 
-    <section class="ticker-bar">
-        <div class="ticker-content">
-            <div class="ticker-item">
-                <div class="number">32%</div>
-                <div class="label">Denial Rate</div>
-            </div>
-            <div class="ticker-item">
-                <div class="number">#1</div>
-                <div class="label">Worst Insurer</div>
-            </div>
-            <div class="ticker-item">
-                <div class="number">80%</div>
-                <div class="label">Surgery Denials</div>
-            </div>
-            <div class="ticker-item">
-                <div class="number">50%+</div>
-                <div class="label">Appeal Win Rate</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stat-fullbleed" style="background:#0a0a0a;">
+    <section class="stat-section">
         <div class="container">
             <div class="big-number">80%</div>
             <div class="stat-label">Surgery Denials</div>
@@ -139,33 +224,41 @@
         </div>
     </section>
 
-    <section class="pull-quote">
-        <div class="pull-quote-inner">
-            <blockquote>"The agent continued to speak over me and refused to assist me. She basically was avoiding calls by keeping me in a silent hold for over an hour and refused to connect me with a supervisor."</blockquote>
-            <cite>Better Business Bureau complaint, 2025</cite>
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote">
+                "The agent continued to speak over me and refused to assist me. She basically was avoiding calls by keeping me in a silent hold for over an hour and refused to connect me with a supervisor."
+            </div>
+            <div class="quote-attribution">Better Business Bureau complaint, 2025</div>
         </div>
     </section>
 
-    <section class="red-banner">
-        <div class="banner-text">When patients appeal, they win over 50% of the time.</div>
-        <div class="source">Source: Industry appeal success rate data</div>
+    <section class="appeal-section">
+        <div class="container">
+            <div class="appeal-text">When patients appeal, they win over 50% of the time.</div>
+            <div class="source">Source: Industry appeal success rate data</div>
+        </div>
     </section>
 
     <section class="final-cta" id="cta">
         <div class="container">
-            <a href="https://ellenrx.com/?utm_source=letsbuyunited.com&utm_medium=satirical&utm_campaign=letsbuy"
-               class="cta-button-large"
+            <a href="https://ellenrx.com/?utm_source=letsbuyunited.com&utm_medium=satirical&utm_campaign=letsbuy" 
+               class="cta-button" 
                onclick="plausible('CTA Click')"
                target="_blank">FIGHT WITH US</a>
         </div>
     </section>
 
     <section class="social">
-        <p>Follow @askellenrx for updates</p>
+        <div class="container">
+            Follow @askellenrx for updates
+        </div>
     </section>
 
     <footer class="disclaimer">
-        <p>This is a satirical website. Not affiliated with UnitedHealthcare. No money is collected. All statistics are from public records and cited sources.</p>
+        <div class="container">
+            This is a satirical website. Not affiliated with UnitedHealthcare. No money is collected. All statistics are from public records and cited sources.
+        </div>
     </footer>
 </body>
 </html>
