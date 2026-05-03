@@ -3,139 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Insurance</title>
+    <title>Health Insurance Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
     <script defer data-domain="letsbuyhealthinsurance.com" src="https://plausible.io/js/script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #000000; color: #ffffff; line-height: 1.4; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
-        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #DC143C; }
-        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-        .logo { font-size: 1.2rem; font-weight: 700; color: #DC143C; }
-        .cta-btn { background: #DC143C; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
-        .cta-btn:hover { background: #b8102e; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
         
-        .hero { background: #000000; padding: 8rem 2rem 6rem; text-align: center; margin-top: 80px; }
-        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: #ffffff; margin-bottom: 2rem; line-height: 0.9; }
-        .hero p { font-size: 1.3rem; color: #cccccc; max-width: 800px; margin: 0 auto 3rem; }
-        .hero .cta-primary { background: #DC143C; color: white; padding: 1.5rem 3rem; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; margin-top: 3rem; display: inline-block; }
-        .hero .cta-primary:hover { background: #b8102e; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
         
-        .company-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; padding: 6rem 2rem; }
-        .company-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(220, 20, 60, 0.2); border-radius: 12px; padding: 3rem 2rem; text-align: center; transition: all 0.2s ease; }
-        .company-card:hover { border-color: #DC143C; transform: translateY(-5px); }
-        .company-card h3 { color: #DC143C; font-size: 2rem; margin-bottom: 2rem; font-weight: 700; }
-        .company-stat { font-size: 3rem; font-weight: 900; color: #DC143C; margin: 1rem 0; line-height: 1; }
-        .company-card p { color: #cccccc; margin-bottom: 2rem; line-height: 1.6; font-size: 1.1rem; }
-        .company-link { background: #DC143C; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.2s ease; }
-        .company-link:hover { background: #b8102e; }
+        header {
+            padding: 4rem 0;
+            text-align: center;
+        }
         
-        .bottom-cta { padding: 6rem 2rem; text-align: center; background: rgba(220, 20, 60, 0.03); }
-        .bottom-cta h2 { font-size: 3rem; font-weight: 800; margin-bottom: 2rem; color: #ffffff; }
-        .appeal-stat { font-size: 1.5rem; color: #DC143C; margin: 2rem 0; font-weight: 600; }
-        .secondary-cta { background: transparent; border: 2px solid #DC143C; color: #DC143C; padding: 1rem 2rem; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 6px; margin: 1rem; }
-        .secondary-cta:hover { background: #DC143C; color: white; }
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 700;
+            color: #FF0000;
+            margin-bottom: 2rem;
+        }
         
-        .social { text-align: center; padding: 3rem 2rem 2rem; }
-        .social p { font-size: 1.1rem; color: #888888; margin-bottom: 1rem; }
-        .social-links a { color: #DC143C; text-decoration: none; margin: 0 1rem; font-weight: 600; }
-        .social-links a:hover { text-decoration: underline; }
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
         
-        .disclaimer { background: rgba(0, 0, 0, 0.8); padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
         
-        @media (max-width: 768px) { 
-            .header-content { padding: 0 1rem; } 
-            .company-grid { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1rem; } 
-            .hero { padding: 6rem 1rem 4rem; }
+        .industry-stats {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+            background-color: #111111;
+        }
+        
+        .big-stat {
+            display: inline-block;
+            margin: 2rem;
+        }
+        
+        .big-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            color: #FF0000;
+            display: block;
+        }
+        
+        .stat-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+        
+        .insurers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .insurer-card {
+            background-color: #111111;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid #333;
+            transition: border-color 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .insurer-card:hover {
+            border-color: #FF0000;
+        }
+        
+        .insurer-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF0000;
+            margin-bottom: 1rem;
+        }
+        
+        .worst-stat {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FF0000;
+            margin-bottom: 0.5rem;
+        }
+        
+        .worst-label {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background-color: #FF0000;
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: 'Oswald', sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem 0;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            background-color: #cc0000;
+        }
+        
+        .final-cta {
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .social {
+            text-align: center;
+            padding: 2rem 0;
+            color: #999999;
+            font-size: 1.25rem;
+        }
+        
+        .disclaimer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+            color: #999999;
+            background-color: #111111;
+        }
+        
+        @media (max-width: 768px) {
+            .insurers-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .big-stat {
+                display: block;
+                margin: 1rem 0;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">HEALTH INSURANCE</div>
-            <a href="https://ellenrx.com/?utm_source=letsbuyhealthinsurance&utm_medium=satirical&utm_campaign=letsbuy" class="cta-btn" onclick="plausible('Header CTA')">FIGHT WITH US</a>
+    <header>
+        <div class="container">
+            <h1>Health Insurance Facts</h1>
         </div>
     </header>
 
     <section class="hero">
-        <h1>You can't buy health insurers.<br>But you can beat them.</h1>
-        <p>Seven companies control most of American healthcare. Here are their records.</p>
-        <a href="https://ellenrx.com/?utm_source=letsbuyhealthinsurance&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Hero CTA')">FIGHT WITH US</a>
-    </section>
-
-    <section class="company-grid">
-        <div class="company-card">
-            <h3>UnitedHealth Group</h3>
-            <div class="company-stat">33%</div>
-            <p>Claims denied in 2023 - twice the industry average</p>
-            <a href="unitedhealth.html" class="company-link">View Facts</a>
-        </div>
-        
-        <div class="company-card">
-            <h3>Aetna (CVS Health)</h3>
-            <div class="company-stat">$924M</div>
-            <p>Operating loss Q3 2024 - financial collapse underway</p>
-            <a href="aetna.html" class="company-link">View Facts</a>
-        </div>
-        
-        <div class="company-card">
-            <h3>Cigna Group</h3>
-            <div class="company-stat">300K</div>
-            <p>Claims denied in two months using algorithms</p>
-            <a href="cigna.html" class="company-link">View Facts</a>
-        </div>
-        
-        <div class="company-card">
-            <h3>Elevance Health</h3>
-            <div class="company-stat">$15M</div>
-            <p>California fine for mishandling member complaints</p>
-            <a href="elevance.html" class="company-link">View Facts</a>
-        </div>
-        
-        <div class="company-card">
-            <h3>Humana</h3>
-            <div class="company-stat">54%</div>
-            <p>Increase in elder care denials targeting seniors</p>
-            <a href="humana.html" class="company-link">View Facts</a>
-        </div>
-        
-        <div class="company-card">
-            <h3>Blue Cross Blue Shield</h3>
-            <div class="company-stat">$2.67B</div>
-            <p>Antitrust settlement - largest in healthcare history</p>
-            <a href="bcbs.html" class="company-link">View Facts</a>
-        </div>
-        
-        <div class="company-card">
-            <h3>Kaiser Permanente</h3>
-            <div class="company-stat">$556M</div>
-            <p>Medicare fraud settlement with DOJ</p>
-            <a href="kaiser.html" class="company-link">View Facts</a>
+        <div class="container">
+            <h2>You can't buy health insurance companies. But you can beat them.</h2>
         </div>
     </section>
 
-    <section class="bottom-cta">
-        <h2>You can't buy health insurance companies. But you can beat them.</h2>
-        <p class="appeal-stat">82% of Medicare Advantage denials are overturned on appeal</p>
-        <div>
-            <a href="https://ellenrx.com/?utm_source=letsbuyhealthinsurance&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Bottom CTA Primary')">FIGHT WITH US</a>
-            <a href="https://ellenrx.com/?utm_source=letsbuyhealthinsurance&utm_medium=denial&utm_campaign=letsbuy" class="secondary-cta" onclick="plausible('Bottom CTA Secondary')">FIGHT YOUR DENIAL</a>
+    <section class="industry-stats">
+        <div class="container">
+            <div class="big-stat">
+                <span class="big-number">16%</span>
+                <span class="stat-label">Industry Average Denial Rate</span>
+            </div>
+            <div class="big-stat">
+                <span class="big-number">50%+</span>
+                <span class="stat-label">Appeal Success Rate</span>
+            </div>
+            <div class="big-stat">
+                <span class="big-number">$10B+</span>
+                <span class="stat-label">Annual Settlements Paid</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="insurers-grid">
+            <a href="unitedhealth.html" class="insurer-card" onclick="plausible('Insurer Card Click', {props: {insurer: 'UnitedHealthcare'}})">
+                <div class="insurer-name">UnitedHealthcare</div>
+                <div class="worst-stat">32%</div>
+                <div class="worst-label">Highest denial rate in industry</div>
+            </a>
+
+            <a href="aetna.html" class="insurer-card" onclick="plausible('Insurer Card Click', {props: {insurer: 'Aetna'}})">
+                <div class="insurer-name">Aetna</div>
+                <div class="worst-stat">$118M</div>
+                <div class="worst-label">Medicare fraud settlement</div>
+            </a>
+
+            <a href="cigna.html" class="insurer-card" onclick="plausible('Insurer Card Click', {props: {insurer: 'Cigna'}})">
+                <div class="insurer-name">Cigna</div>
+                <div class="worst-stat">1.2 sec</div>
+                <div class="worst-label">Average claim review time</div>
+            </a>
+
+            <a href="elevance.html" class="insurer-card" onclick="plausible('Insurer Card Click', {props: {insurer: 'Elevance'}})">
+                <div class="insurer-name">Elevance Health</div>
+                <div class="worst-stat">23%</div>
+                <div class="worst-label">Claims denied</div>
+            </a>
+
+            <a href="humana.html" class="insurer-card" onclick="plausible('Insurer Card Click', {props: {insurer: 'Humana'}})">
+                <div class="insurer-name">Humana</div>
+                <div class="worst-stat">94% → 25%</div>
+                <div class="worst-label">Star ratings collapse</div>
+            </a>
+
+            <a href="bcbs.html" class="insurer-card" onclick="plausible('Insurer Card Click', {props: {insurer: 'BCBS'}})">
+                <div class="insurer-name">Blue Cross Blue Shield</div>
+                <div class="worst-stat">$2.67B</div>
+                <div class="worst-label">Antitrust settlement</div>
+            </a>
+
+            <a href="kaiser.html" class="insurer-card" onclick="plausible('Insurer Card Click', {props: {insurer: 'Kaiser'}})">
+                <div class="insurer-name">Kaiser Permanente</div>
+                <div class="worst-stat">$200M</div>
+                <div class="worst-label">Mental health settlement</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <a href="https://ellenrx.com/?utm_source=letsbuyhealthinsurance.com&utm_medium=satirical&utm_campaign=letsbuy" 
+               class="cta-button" 
+               onclick="plausible('CTA Click')"
+               target="_blank">FIGHT WITH US</a>
         </div>
     </section>
 
     <section class="social">
-        <p>Follow @askellenrx for updates</p>
-        <div class="social-links">
-            <a href="https://instagram.com/askellenrx" target="_blank">Instagram</a>
-            <a href="https://tiktok.com/@askellenrx" target="_blank">TikTok</a>
+        <div class="container">
+            Follow @askellenrx for updates
         </div>
     </section>
 
     <footer class="disclaimer">
-        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with any health insurance company. All statistics are sourced from public records, court settlements, and regulatory reports.</p>
+        <div class="container">
+            This is a satirical website. Not affiliated with any health insurance companies. No money is collected. All statistics are from public records and cited sources.
+        </div>
     </footer>
 </body>
 </html>

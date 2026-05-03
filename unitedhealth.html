@@ -3,179 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnitedHealth Group</title>
+    <title>UnitedHealthcare Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script defer data-domain="letsbuyunited.com" src="https://plausible.io/js/script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #003049; color: #FDF0D5; line-height: 1.4; }
-        
-        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0, 48, 73, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #002677; }
+        body { background-color: #000000; color: #ffffff; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.4; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* HEADER */
+        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 2px solid #DC143C; }
         .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-        .logo { font-size: 1.2rem; font-weight: 700; color: #002677; }
-        .cta-btn { background: #002677; color: #FDF0D5; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
-        .cta-btn:hover { background: #003399; }
-        
-        .hero { background: #003049000; padding: 8rem 2rem 6rem; text-align: center; margin-top: 80px; }
-        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; color: #FDF0D5; margin-bottom: 2rem; line-height: 0.9; }
-        .hero .cta-primary { background: #002677; color: #FDF0D5; padding: 1.5rem 3rem; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; margin-top: 3rem; display: inline-block; }
-        .hero .cta-primary:hover { background: #003399; }
-        
-        .stats { padding: 6rem 2rem; }
-        .stat-item { max-width: 800px; margin: 0 auto 8rem; text-align: center; }
-        .stat-number { font-size: clamp(4rem, 12vw, 8rem); font-weight: 900; color: #002677; margin-bottom: 1rem; line-height: 0.8; }
-        .stat-label { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; color: #FDF0D5; margin-bottom: 1rem; }
-        .stat-source { font-size: 1rem; color: #888888; font-weight: 400; }
-        
-        .settled-facts { max-width: 900px; margin: 0 auto; padding: 6rem 2rem; }
-        .settled-facts h2 { font-size: 3rem; font-weight: 800; text-align: center; margin-bottom: 4rem; color: #002677; }
-        .fact-item { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #333; }
-        .fact-item h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #002677; }
-        .fact-item p { font-size: 1.1rem; color: #cccccc; line-height: 1.6; }
-        
-        .counter { background: #002677; padding: 6rem 2rem; text-align: center; }
-        .counter h2 { font-size: 3rem; font-weight: 800; margin-bottom: 3rem; color: #FDF0D5; }
-        .counter-grid { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-        .counter-item h3 { font-size: 4rem; font-weight: 900; margin-bottom: 1rem; }
-        .counter-item p { font-size: 1.2rem; opacity: 0.9; }
-        
-        .bottom-cta { padding: 6rem 2rem; text-align: center; background: rgba(0, 38, 119, 0.03); }
-        .bottom-cta h2 { font-size: 3rem; font-weight: 800; margin-bottom: 2rem; color: #FDF0D5; }
-        .appeal-stat { font-size: 1.5rem; color: #002677; margin: 2rem 0; font-weight: 600; }
-        .secondary-cta { background: transparent; border: 2px solid #002677; color: #002677; padding: 1rem 2rem; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 6px; margin: 1rem; }
-        .secondary-cta:hover { background: #002677; color: #FDF0D5; }
-        
-        .social { text-align: center; padding: 3rem 2rem 2rem; }
-        .social p { font-size: 1.1rem; color: #888888; margin-bottom: 1rem; }
-        .social-links a { color: #002677; text-decoration: none; margin: 0 1rem; font-weight: 600; }
-        .social-links a:hover { text-decoration: underline; }
-        
-        .disclaimer { background: rgba(0, 48, 73, 0.8); padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
-        
-        @media (max-width: 768px) { 
-            .header-content { padding: 0 1rem; } 
-            .counter-grid { grid-template-columns: 1fr; gap: 3rem; } 
-            .hero { padding: 6rem 1rem 4rem; }
-            .stats { padding: 4rem 1rem; }
-            .stat-item { margin-bottom: 6rem; }
+        .logo { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; color: #ffffff; text-transform: uppercase; }
+        .cta-btn { background: #DC143C; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 0; font-weight: 700; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .cta-btn:hover { background: #a01030; }
+
+        /* HERO */
+        .hero { padding: 10rem 2rem 6rem; text-align: center; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; color: #DC143C; margin-bottom: 1.5rem; line-height: 0.9; text-transform: uppercase; }
+        .hero h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 400; color: #cccccc; margin-bottom: 2rem; }
+
+        /* FULL-BLEED STAT */
+        .stat-fullbleed { padding: 8rem 2rem; text-align: center; }
+        .stat-fullbleed .big-number { font-family: 'Oswald', sans-serif; font-size: clamp(8rem, 22vw, 16rem); font-weight: 700; color: #DC143C; line-height: 0.8; }
+        .stat-fullbleed .stat-label { font-family: 'Oswald', sans-serif; font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 600; color: #ffffff; text-transform: uppercase; margin-top: 1rem; }
+        .stat-fullbleed .source { font-size: 0.95rem; color: #888888; margin-top: 1.5rem; }
+
+        /* SPLIT TWO-COLUMN */
+        .split-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 50vh; }
+        .split-left { background: #0a0a0a; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 4rem 2rem; text-align: center; }
+        .split-left .big-number { font-family: 'Oswald', sans-serif; font-size: clamp(5rem, 14vw, 10rem); font-weight: 700; color: #DC143C; line-height: 0.8; }
+        .split-right { display: flex; flex-direction: column; justify-content: center; padding: 4rem 3rem; border-left: 4px solid #DC143C; }
+        .split-right .stat-label { font-family: 'Oswald', sans-serif; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; color: #ffffff; text-transform: uppercase; margin-bottom: 1rem; }
+        .split-right .source { font-size: 0.95rem; color: #888888; }
+        .split-right p { font-size: 1.1rem; color: #cccccc; line-height: 1.6; margin-top: 1rem; }
+
+        /* RED GRADIENT BANNER */
+        .red-banner { background: linear-gradient(135deg, #DC143C 0%, #5a0a1a 40%, #000000 100%); padding: 5rem 2rem; text-align: center; }
+        .red-banner .banner-text { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 3.5rem); font-weight: 700; color: #ffffff; max-width: 900px; margin: 0 auto; text-transform: uppercase; }
+        .red-banner .source { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-top: 1.5rem; }
+
+        /* PULL QUOTE */
+        .pull-quote { padding: 5rem 2rem; }
+        .pull-quote-inner { max-width: 800px; margin: 0 auto; border-left: 6px solid #DC143C; padding-left: 2rem; }
+        .pull-quote-inner blockquote { font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-style: italic; color: #ffffff; line-height: 1.6; margin-bottom: 1rem; }
+        .pull-quote-inner cite { font-size: 1rem; color: #888888; font-style: normal; }
+
+        /* TICKER BAR */
+        .ticker-bar { background: #111111; border-top: 2px solid #DC143C; border-bottom: 2px solid #DC143C; padding: 2rem 0; overflow: hidden; }
+        .ticker-content { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .ticker-item { text-align: center; }
+        .ticker-item .number { font-family: 'Oswald', sans-serif; font-size: 2.5rem; font-weight: 700; color: #DC143C; }
+        .ticker-item .label { font-size: 0.85rem; color: #888888; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* CTA */
+        .final-cta { text-align: center; padding: 6rem 2rem; }
+        .cta-button-large { background: #DC143C; color: #fff; padding: 1.25rem 3rem; font-size: 1.2rem; font-weight: 700; font-family: 'Oswald', sans-serif; text-decoration: none; display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; border: none; cursor: pointer; }
+        .cta-button-large:hover { background: #a01030; }
+
+        /* SOCIAL & DISCLAIMER */
+        .social { text-align: center; padding: 3rem 2rem; }
+        .social p { font-size: 1.1rem; color: #888888; }
+        .disclaimer { background: #0a0a0a; padding: 3rem 2rem; text-align: center; color: #666666; font-size: 0.85rem; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .split-section { grid-template-columns: 1fr; }
+            .split-right { border-left: none; border-top: 4px solid #DC143C; }
+            .ticker-content { flex-direction: column; }
+            .header-content { padding: 0 1rem; }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="logo">UNITEDHEALTH</div>
-            <a href="https://ellenrx.com/?utm_source=letsbuyunited&utm_medium=satirical&utm_campaign=letsbuy" class="cta-btn" onclick="plausible('Header CTA')">FIGHT WITH US</a>
+            <div class="logo">UnitedHealthcare</div>
+            <a href="https://ellenrx.com/?utm_source=letsbuyunited.com&utm_medium=satirical&utm_campaign=letsbuy" class="cta-btn" onclick="plausible('Header CTA Click')">FIGHT WITH US</a>
         </div>
     </header>
 
     <section class="hero">
-        <h1>You can't buy UnitedHealth.<br>But you can beat them.</h1>
-        <a href="https://ellenrx.com/?utm_source=letsbuyunited&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Hero CTA')">FIGHT WITH US</a>
+        <div class="container">
+            <h1>UnitedHealthcare</h1>
+            <h2>You can't buy UnitedHealthcare. But you can beat them.</h2>
+            <a href="#cta" class="cta-btn" onclick="plausible('Hero CTA Click')">FIGHT WITH US</a>
+        </div>
     </section>
 
-    <section class="stats">
-        <div class="stat-item">
-            <div class="stat-number">33%</div>
+    <section class="stat-fullbleed">
+        <div class="container">
+            <div class="big-number">32%</div>
             <div class="stat-label">Claims Denied</div>
-            <div class="stat-source">2023 prior authorization denials</div>
-        </div>
-        
-        <div class="stat-item">
-            <div class="stat-number">90%</div>
-            <div class="stat-label">AI Error Rate</div>
-            <div class="stat-source">nH Predict algorithm accuracy</div>
-        </div>
-        
-        <div class="stat-item">
-            <div class="stat-number">$26.3M</div>
-            <div class="stat-label">CEO Compensation</div>
-            <div class="stat-source">Andrew Witty 2024 total pay</div>
-        </div>
-        
-        <div class="stat-item">
-            <div class="stat-number">$400B</div>
-            <div class="stat-label">Annual Revenue</div>
-            <div class="stat-source">2024 total company revenue</div>
+            <div class="source">Source: ValuePenguin, 2023 marketplace data analysis</div>
         </div>
     </section>
 
-    <section class="settled-facts">
-        <h2>Settled Cases</h2>
-        
-        <div class="fact-item">
-            <h3>$8.4 Million Settlement</h3>
-            <p>UnitedHealth and Optum paid $8.4 million in 2023 to settle lawsuit over using "dummy codes" to defraud Medicare Advantage, submitting false diagnosis information to increase government reimbursements.</p>
+    <section class="split-section">
+        <div class="split-left">
+            <div class="big-number">#1</div>
         </div>
-        
-        <div class="fact-item">
-            <h3>AI Algorithm Lawsuit</h3>
-            <p>Families of deceased Medicare patients sued UnitedHealth for using NaviHealth's "nH Predict" AI system to deny medically necessary care, alleging the algorithm had a 90% error rate in post-acute care determinations.</p>
-        </div>
-        
-        <div class="fact-item">
-            <h3>Antitrust Action</h3>
-            <p>Department of Justice filed lawsuit to block UnitedHealth's acquisition of Amedisys, citing anticompetitive concerns about the company's growing control over American healthcare markets.</p>
+        <div class="split-right">
+            <div class="stat-label">Highest Denial Rate</div>
+            <p>Among all major insurers analyzed, UnitedHealthcare leads the nation in claim denials.</p>
+            <div class="source">Source: KSDK analysis of major insurers</div>
         </div>
     </section>
 
-    <section class="counter">
-        <h2>Appeals Work</h2>
-        <div class="counter-grid">
-            <div class="counter-item">
-                <h3 id="patronCount">47,329</h3>
-                <p>Appeals Filed</p>
+    <section class="ticker-bar">
+        <div class="ticker-content">
+            <div class="ticker-item">
+                <div class="number">32%</div>
+                <div class="label">Denial Rate</div>
             </div>
-            <div class="counter-item">
-                <h3 id="dollarCount">$2,847,893</h3>
-                <p>Claims Approved</p>
+            <div class="ticker-item">
+                <div class="number">#1</div>
+                <div class="label">Worst Insurer</div>
+            </div>
+            <div class="ticker-item">
+                <div class="number">80%</div>
+                <div class="label">Surgery Denials</div>
+            </div>
+            <div class="ticker-item">
+                <div class="number">50%+</div>
+                <div class="label">Appeal Win Rate</div>
             </div>
         </div>
     </section>
 
-    <section class="bottom-cta">
-        <h2>You can't buy them. But you can beat them.</h2>
-        <p class="appeal-stat">82% of Medicare Advantage denials are overturned on appeal</p>
-        <div>
-            <a href="https://ellenrx.com/?utm_source=letsbuyunited&utm_medium=satirical&utm_campaign=letsbuy" class="cta-primary" onclick="plausible('Bottom CTA Primary')">FIGHT WITH US</a>
-            <a href="https://ellenrx.com/?utm_source=letsbuyunited&utm_medium=denial&utm_campaign=letsbuy" class="secondary-cta" onclick="plausible('Bottom CTA Secondary')">FIGHT YOUR DENIAL</a>
+    <section class="stat-fullbleed" style="background:#0a0a0a;">
+        <div class="container">
+            <div class="big-number">80%</div>
+            <div class="stat-label">Surgery Denials</div>
+            <div class="source">Source: Nemedic analysis of elective procedures</div>
+        </div>
+    </section>
+
+    <section class="pull-quote">
+        <div class="pull-quote-inner">
+            <blockquote>"The agent continued to speak over me and refused to assist me. She basically was avoiding calls by keeping me in a silent hold for over an hour and refused to connect me with a supervisor."</blockquote>
+            <cite>Better Business Bureau complaint, 2025</cite>
+        </div>
+    </section>
+
+    <section class="red-banner">
+        <div class="banner-text">When patients appeal, they win over 50% of the time.</div>
+        <div class="source">Source: Industry appeal success rate data</div>
+    </section>
+
+    <section class="final-cta" id="cta">
+        <div class="container">
+            <a href="https://ellenrx.com/?utm_source=letsbuyunited.com&utm_medium=satirical&utm_campaign=letsbuy"
+               class="cta-button-large"
+               onclick="plausible('CTA Click')"
+               target="_blank">FIGHT WITH US</a>
         </div>
     </section>
 
     <section class="social">
         <p>Follow @askellenrx for updates</p>
-        <div class="social-links">
-            <a href="https://instagram.com/askellenrx" target="_blank">Instagram</a>
-            <a href="https://tiktok.com/@askellenrx" target="_blank">TikTok</a>
-        </div>
     </section>
 
     <footer class="disclaimer">
-        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with UnitedHealth Group. No actual pledges or money are collected. All statistics are sourced from public records, government reports, and court settlements.</p>
+        <p>This is a satirical website. Not affiliated with UnitedHealthcare. No money is collected. All statistics are from public records and cited sources.</p>
     </footer>
-
-    <script>
-        function incrementCounters() {
-            const patronEl = document.getElementById('patronCount');
-            const dollarEl = document.getElementById('dollarCount');
-            setInterval(() => {
-                const currentPatrons = parseInt(patronEl.textContent.replace(/,/g, ''));
-                const newPatrons = currentPatrons + Math.floor(Math.random() * 3) + 1;
-                patronEl.textContent = newPatrons.toLocaleString();
-                const currentDollars = parseInt(dollarEl.textContent.replace(/[$,]/g, ''));
-                const newDollars = currentDollars + Math.floor(Math.random() * 455) + 45;
-                dollarEl.textContent = '$' + newDollars.toLocaleString();
-            }, Math.random() * 8000 + 3000);
-        }
-        window.addEventListener('load', () => { setTimeout(incrementCounters, 2000); });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-            });
-        });
-    </script>
 </body>
 </html>
