@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevance Health</title>
+    <title>Elevance Health Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
     <script defer data-domain="buyelevance.com" src="https://plausible.io/js/script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,414 +13,250 @@
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #0a0a0a;
+            background-color: #1a1a1a;
             color: #ffffff;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            overflow-x: hidden;
         }
         
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            border-bottom: 1px solid #003DA5;
-        }
-        
-        .header-content {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
         
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #003DA5;
-            letter-spacing: 1px;
-        }
-        
-        .nav-items {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .pledge-btn {
-            background: #003DA5;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        
-        .pledge-btn:hover {
-            background: #0052cc;
-        }
-        
-        .hero-punchline {
-            background: #0a0a0a;
-            padding: 8rem 2rem 4rem;
+        header {
+            padding: 2rem 0;
             text-align: center;
-            margin-top: 80px;
+            position: relative;
         }
         
-        .hero-punchline h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
             font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 3rem;
-            line-height: 1.2;
-        }
-        
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 61, 165, 0.2);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: border-color 0.2s ease;
-        }
-        
-        .stat-card:hover {
-            border-color: #003DA5;
-        }
-        
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #003DA5;
+            color: #FFD700;
             margin-bottom: 1rem;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .stat-source {
-            font-size: 0.85rem;
-            color: #888888;
-        }
-        
-        .record {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        
-        .record h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #003DA5;
-            font-weight: 600;
-        }
-        
-        .record-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid #003DA5;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 0 6px 6px 0;
-        }
-        
-        .record-item h3 {
-            color: #003DA5;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .record-item p {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-        
-        .pledge-counter {
-            background: #003DA5;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
-        }
-        
-        .counter-grid {
-            max-width: 600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        
-        .counter-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .counter-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        .punchline {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: rgba(0, 61, 165, 0.05);
-        }
-        
-        .punchline h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 2rem;
-            color: #ffffff;
-            font-weight: 600;
-        }
-        
-        .appeal-stat {
-            font-size: 1.2rem;
-            color: #003DA5;
-            margin: 2rem 0;
-            font-weight: 500;
         }
         
         .cta-button {
-            display: inline-block;
-            background: #003DA5;
-            color: white;
-            padding: 1.2rem 3rem;
-            font-size: 1.2rem;
+            background-color: #FF3333;
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
             font-weight: 600;
+            font-family: 'Oswald', sans-serif;
+            cursor: pointer;
             text-decoration: none;
-            border-radius: 6px;
-            margin: 2rem 0;
-            transition: background 0.2s ease;
+            display: inline-block;
+            margin-top: 1rem;
+            text-transform: uppercase;
         }
         
         .cta-button:hover {
-            background: #0052cc;
+            background-color: #cc2929;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .big-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 700;
+            color: #FF3333;
+            line-height: 0.8;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 600;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .source {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-top: 2rem;
+        }
+        
+        .quote-section {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 0;
+            margin: 4rem 0;
+            background-color: #2a2a2a;
+        }
+        
+        .quote {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+        
+        .quote-attribution {
+            font-size: 1rem;
+            color: #FFD700;
+        }
+        
+        .appeal-section {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .appeal-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: #FFD700;
+            margin-bottom: 2rem;
+        }
+        
+        .final-cta {
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .social {
+            text-align: center;
+            padding: 2rem 0;
+            color: #FFD700;
+            font-size: 1.25rem;
         }
         
         .disclaimer {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 3rem 2rem;
             text-align: center;
-            color: #888888;
-            font-size: 0.9rem;
-            line-height: 1.7;
+            padding: 2rem;
+            font-size: 0.875rem;
+            color: #999999;
+            background-color: #0a0a0a;
         }
         
         @media (max-width: 768px) {
-            .header-content {
-                padding: 0 1rem;
+            .stat-section {
+                min-height: 90vh;
+                padding: 2rem 0;
             }
             
-            .counter-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                padding: 2rem 1rem;
-            }
-            
-            .hero-punchline {
-                padding: 6rem 1rem 2rem;
+            .container {
+                padding: 0 15px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">ELEVANCE HEALTH</div>
-            <div class="nav-items">
-                <a href="#punchline" class="pledge-btn">FIGHT YOUR DENIAL</a>
-            </div>
+    <header>
+        <div class="container">
+            <h1>Elevance Health</h1>
+            <a href="#cta" class="cta-button" onclick="plausible('Header CTA Click')">FIGHT WITH US</a>
         </div>
     </header>
 
-    <section class="hero-punchline">
-        <h1>You can't buy them.<br>But you can beat them.</h1>
-    </section>
-
-    <section class="stats-grid">
-        <div class="stat-card">
-            <div class="stat-number">$15M</div>
-            <div class="stat-label">California Fine</div>
-            <div class="stat-source">Mishandling member complaints - Becker's</div>
-        </div>
-        
-        <div class="stat-card">
-            <div class="stat-number">$20.5M</div>
-            <div class="stat-label">CEO Gail Boudreaux's Pay</div>
-            <div class="stat-source">92.2% bonuses/stock - Simply Wall St</div>
-        </div>
-        
-        <div class="stat-card">
-            <div class="stat-number">$177B</div>
-            <div class="stat-label">2024 Revenue</div>
-            <div class="stat-source">While denying mental health care - Forbes</div>
-        </div>
-        
-        <div class="stat-card">
-            <div class="stat-number">$6B</div>
-            <div class="stat-label">Annual Profit</div>
-            <div class="stat-source">From systematic coverage failures - Forbes</div>
-        </div>
-        
-        <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Ghost Network Lawsuits</div>
-            <div class="stat-source">Fake mental health directories - Fierce Healthcare</div>
-        </div>
-        
-        <div class="stat-card">
-            <div class="stat-number">Higher</div>
-            <div class="stat-label">Mental Health Denial Rate</div>
-            <div class="stat-source">Than medical/surgical - APA documentation</div>
+    <section class="hero">
+        <div class="container">
+            <h2>You can't buy Elevance. But you can beat them.</h2>
         </div>
     </section>
 
-    <section class="record">
-        <h2>Facts</h2>
-        
-        <div class="record-item">
-            <h3>2026: California Fines Anthem $15 Million</h3>
-            <p>California regulators fined Anthem Blue Cross $15 million for systematic mishandling of member complaints and violating state insurance laws designed to protect consumers from coverage denials and delays.</p>
-        </div>
-        
-        <div class="record-item">
-            <h3>2025: Multiple "Ghost Network" Class Action Lawsuits</h3>
-            <p>Patients sued Elevance subsidiaries across New York and Connecticut, alleging the company maintains fake mental health provider directories to create the illusion of coverage while violating the Mental Health Parity Act and No Surprises Act.</p>
-        </div>
-        
-        <div class="record-item">
-            <h3>Ongoing: CMS Sanctions for Coverage Failures</h3>
-            <p>Centers for Medicare & Medicaid Services sanctioned Elevance Health for "systemic deficiencies in the very coverage determination and appeals processes," highlighting fundamental failures in how the company handles patient care decisions.</p>
-        </div>
-        
-        <div class="record-item">
-            <h3>2023: Mental Health Parity Violations</h3>
-            <p>American Psychiatric Association documented that Elevance mental health claims face significantly higher denial rates than medical/surgical claims, precisely the discrimination that federal parity laws were designed to prevent.</p>
+    <section class="stat-section">
+        <div class="container">
+            <div class="big-number">23%</div>
+            <div class="stat-label">Claims Denied</div>
+            <div class="source">Source: TechTarget payer analysis</div>
         </div>
     </section>
 
-    <section class="pledge-counter" id="counter">
-        <h2>People Fighting Back</h2>
-        <div class="counter-grid">
-            <div class="counter-item">
-                <h3 id="patronCount">35,891</h3>
-                <p>Appeals Filed</p>
+    <section class="stat-section">
+        <div class="container">
+            <div class="big-number">38%</div>
+            <div class="stat-label">Prior Auth Denials</div>
+            <div class="source">Source: Appeal Armor analysis</div>
+        </div>
+    </section>
+
+    <section class="stat-section">
+        <div class="container">
+            <div class="big-number">2022</div>
+            <div class="stat-label">Anthem Rebrand</div>
+            <div class="source">Source: Company restructuring</div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote">
+                "In a signed letter addressed to CEO Gail Boudreaux, the group asked Elevance Health, previously known as Anthem, to overturn claims and pre-authorizations denials and to be more transparent about the demographics of who gets denied coverage."
             </div>
-            <div class="counter-item">
-                <h3 id="dollarCount">$2,374,962</h3>
-                <p>Denials Overturned</p>
-            </div>
+            <div class="quote-attribution">Patient advocacy group letter, WFYI 2022</div>
         </div>
     </section>
 
-    <section class="punchline" id="punchline">
-        <h2>You can't buy Elevance Health.</h2>
-        <h2>But you can beat them.</h2>
-        
-        <p class="appeal-stat">82% of Medicare Advantage denials are overturned on appeal</p>
-        <p class="appeal-stat">Their ghost networks count on you giving up. Don't.</p>
-        
-        <a href="https://ellenrx.com/?utm_source=buyelevance&utm_medium=satirical&utm_campaign=letsbuy" class="cta-button" onclick="plausible('CTA Click')">FIGHT YOUR DENIAL</a>
+    <section class="appeal-section">
+        <div class="container">
+            <div class="appeal-text">When patients appeal, they win over 50% of the time.</div>
+            <div class="source">Source: Industry appeal success rate data</div>
+        </div>
+    </section>
+
+    <section class="final-cta" id="cta">
+        <div class="container">
+            <a href="https://ellenrx.com/?utm_source=buyelevance.com&utm_medium=satirical&utm_campaign=letsbuy" 
+               class="cta-button" 
+               onclick="plausible('CTA Click')"
+               target="_blank">FIGHT WITH US</a>
+        </div>
+    </section>
+
+    <section class="social">
+        <div class="container">
+            Follow @askellenrx for updates
+        </div>
     </section>
 
     <footer class="disclaimer">
-        <p><strong>Disclaimer:</strong> This is a satirical website. Not affiliated with Elevance Health. No actual pledges or money are collected. All statistics are sourced from public records, government reports, and investigative journalism including: Becker's Healthcare reporting, Simply Wall Street analysis, Forbes financial coverage, Fierce Healthcare investigations, American Psychiatric Association research, CMS regulatory actions, and federal court filings.</p>
+        <div class="container">
+            This is a satirical website. Not affiliated with Elevance Health. No money is collected. All statistics are from public records and cited sources.
+        </div>
     </footer>
-
-    <script>
-        // Animated counters
-        function animateCounter(element, start, end, duration, prefix = '', suffix = '') {
-            let startTimestamp = null;
-            
-            function step(timestamp) {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const current = Math.floor(progress * (end - start) + start);
-                
-                if (prefix === '$') {
-                    element.textContent = prefix + current.toLocaleString() + suffix;
-                } else {
-                    element.textContent = prefix + current.toLocaleString() + suffix;
-                }
-                
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            }
-            
-            window.requestAnimationFrame(step);
-        }
-
-        // Slow counter increase
-        function incrementCounters() {
-            const patronEl = document.getElementById('patronCount');
-            const dollarEl = document.getElementById('dollarCount');
-            
-            setInterval(() => {
-                // Add 1-3 appeals randomly
-                const currentPatrons = parseInt(patronEl.textContent.replace(/,/g, ''));
-                const newPatrons = currentPatrons + Math.floor(Math.random() * 3) + 1;
-                patronEl.textContent = newPatrons.toLocaleString();
-                
-                // Add $45-500 randomly
-                const currentDollars = parseInt(dollarEl.textContent.replace(/[$,]/g, ''));
-                const newDollars = currentDollars + Math.floor(Math.random() * 455) + 45;
-                dollarEl.textContent = '$' + newDollars.toLocaleString();
-                
-            }, Math.random() * 8000 + 3000); // Every 3-11 seconds
-        }
-
-        // Start counter animation when page loads
-        window.addEventListener('load', () => {
-            setTimeout(incrementCounters, 2000);
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

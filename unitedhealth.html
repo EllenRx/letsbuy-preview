@@ -7,253 +7,39 @@
     <script defer data-domain="letsbuyunited.com" src="https://plausible.io/js/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-        
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            border-bottom: 1px solid #002677;
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #002677;
-            letter-spacing: 1px;
-        }
-        
-        .nav-items {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .pledge-btn {
-            background: #002677;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        
-        .pledge-btn:hover {
-            background: #003399;
-        }
-        
-        .hero-punchline {
-            background: #0a0a0a;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            margin-top: 80px;
-        }
-        
-        .hero-punchline h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 3rem;
-            line-height: 1.2;
-        }
-        
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 38, 119, 0.2);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: border-color 0.2s ease;
-        }
-        
-        .stat-card:hover {
-            border-color: #002677;
-        }
-        
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #002677;
-            margin-bottom: 1rem;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .stat-source {
-            font-size: 0.85rem;
-            color: #888888;
-        }
-        
-        .record {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        
-        .record h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #002677;
-            font-weight: 600;
-        }
-        
-        .record-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid #002677;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 0 6px 6px 0;
-        }
-        
-        .record-item h3 {
-            color: #002677;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .record-item p {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-        
-        .pledge-counter {
-            background: #002677;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
-        }
-        
-        .counter-grid {
-            max-width: 600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        
-        .counter-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .counter-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        .punchline {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: rgba(0, 38, 119, 0.05);
-        }
-        
-        .punchline h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 2rem;
-            color: #ffffff;
-            font-weight: 600;
-        }
-        
-        .appeal-stat {
-            font-size: 1.2rem;
-            color: #002677;
-            margin: 2rem 0;
-            font-weight: 500;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #002677;
-            color: white;
-            padding: 1.2rem 3rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            margin: 2rem 0;
-            transition: background 0.2s ease;
-        }
-        
-        .cta-button:hover {
-            background: #003399;
-        }
-        
-        .disclaimer {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 3rem 2rem;
-            text-align: center;
-            color: #888888;
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                padding: 0 1rem;
-            }
-            
-            .counter-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                padding: 2rem 1rem;
-            }
-            
-            .hero-punchline {
-                padding: 6rem 1rem 2rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #0a0a0a; color: #ffffff; line-height: 1.6; }
+        .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 1px solid #002677; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #002677; letter-spacing: 1px; }
+        .nav-items { display: flex; align-items: center; gap: 2rem; }
+        .pledge-btn { background: #002677; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 4px; font-weight: 600; text-decoration: none; transition: all 0.2s ease; }
+        .pledge-btn:hover { background: #003399; }
+        .hero-punchline { background: #0a0a0a; padding: 8rem 2rem 4rem; text-align: center; margin-top: 80px; }
+        .hero-punchline h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; color: #ffffff; margin-bottom: 3rem; line-height: 1.2; }
+        .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 4rem 2rem; }
+        .stat-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 38, 119, 0.2); border-radius: 8px; padding: 2.5rem 2rem; text-align: center; transition: border-color 0.2s ease; }
+        .stat-card:hover { border-color: #002677; }
+        .stat-number { font-size: 3.5rem; font-weight: 700; color: #002677; margin-bottom: 1rem; }
+        .stat-label { font-size: 1.1rem; color: #ffffff; margin-bottom: 1rem; font-weight: 500; }
+        .stat-source { font-size: 0.85rem; color: #888888; }
+        .record { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .record h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: #002677; font-weight: 600; }
+        .record-item { background: rgba(255, 255, 255, 0.03); border-left: 3px solid #002677; padding: 2rem; margin-bottom: 1.5rem; border-radius: 0 6px 6px 0; }
+        .record-item h3 { color: #002677; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600; }
+        .record-item p { color: #cccccc; line-height: 1.6; }
+        .pledge-counter { background: #002677; padding: 4rem 2rem; text-align: center; color: white; }
+        .counter-grid { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .counter-item h3 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .counter-item p { font-size: 1.1rem; opacity: 0.9; }
+        .punchline { padding: 6rem 2rem; text-align: center; background: rgba(0, 38, 119, 0.05); }
+        .punchline h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 2rem; color: #ffffff; font-weight: 600; }
+        .appeal-stat { font-size: 1.2rem; color: #002677; margin: 2rem 0; font-weight: 500; }
+        .cta-button { display: inline-block; background: #002677; color: white; padding: 1.2rem 3rem; font-size: 1.2rem; font-weight: 600; text-decoration: none; border-radius: 6px; margin: 2rem 0; transition: background 0.2s ease; }
+        .cta-button:hover { background: #003399; }
+        .disclaimer { background: rgba(0, 0, 0, 0.5); padding: 3rem 2rem; text-align: center; color: #888888; font-size: 0.9rem; line-height: 1.7; }
+        @media (max-width: 768px) { .header-content { padding: 0 1rem; } .counter-grid { grid-template-columns: 1fr; gap: 2rem; } .stats-grid { grid-template-columns: 1fr; padding: 2rem 1rem; } .hero-punchline { padding: 6rem 1rem 2rem; } }
     </style>
 </head>
 <body>
@@ -276,31 +62,26 @@
             <div class="stat-label">Claims Denied in 2023</div>
             <div class="stat-source">Twice the industry average - ValuePenguin/Boston Globe</div>
         </div>
-        
         <div class="stat-card">
             <div class="stat-number">$26.3M</div>
             <div class="stat-label">CEO Andrew Witty's 2024 Pay</div>
             <div class="stat-source">348x median employee salary - AFL-CIO</div>
         </div>
-        
         <div class="stat-card">
             <div class="stat-number">$400B</div>
             <div class="stat-label">2024 Revenue</div>
             <div class="stat-source">While denying life-saving care - MacroTrends</div>
         </div>
-        
         <div class="stat-card">
             <div class="stat-number">90%</div>
             <div class="stat-label">AI Algorithm Error Rate</div>
             <div class="stat-source">nH Predict system - Federal lawsuit</div>
         </div>
-        
         <div class="stat-card">
             <div class="stat-number">$2B</div>
             <div class="stat-label">Alleged Medicare Fraud</div>
             <div class="stat-source">DOJ whistleblower case - NBC News</div>
         </div>
-        
         <div class="stat-card">
             <div class="stat-number">0</div>
             <div class="stat-label">Years in Prison</div>
@@ -310,22 +91,18 @@
 
     <section class="record">
         <h2>Facts</h2>
-        
         <div class="record-item">
             <h3>2025: DOJ Criminal Investigation</h3>
             <p>UnitedHealth Group faces ongoing Department of Justice criminal and civil investigations over Medicare billing practices, including allegations of inflated risk adjustment payments and fraudulent billing worth billions.</p>
         </div>
-        
         <div class="record-item">
             <h3>2023: AI Death Algorithm Lawsuit</h3>
             <p>Families of deceased Medicare patients sued UnitedHealth for using NaviHealth's "nH Predict" AI with a 90% error rate to override doctors and deny medically necessary care, leading to patient deaths from premature discharge.</p>
         </div>
-        
         <div class="record-item">
             <h3>2017-2025: Medicare Advantage Fraud</h3>
             <p>Multiple DOJ False Claims Act lawsuits allege UnitedHealth systematically inflated patient diagnoses to steal billions from Medicare, with whistleblower cases claiming at least $2 billion in overpayments.</p>
         </div>
-        
         <div class="record-item">
             <h3>2024: Antitrust Violations</h3>
             <p>DOJ sued to block UnitedHealth's acquisition of Amedisys, citing anticompetitive concerns about the company's growing monopolistic control over American healthcare.</p>
@@ -349,10 +126,8 @@
     <section class="punchline" id="punchline">
         <h2>You can't buy UnitedHealth Group.</h2>
         <h2>But you can beat them.</h2>
-        
         <p class="appeal-stat">82% of Medicare Advantage denials are overturned on appeal</p>
         <p class="appeal-stat">They count on you giving up. Don't.</p>
-        
         <a href="https://ellenrx.com/?utm_source=letsbuyunited&utm_medium=satirical&utm_campaign=letsbuy" class="cta-button" onclick="plausible('CTA Click')">FIGHT YOUR DENIAL</a>
     </section>
 
@@ -361,64 +136,24 @@
     </footer>
 
     <script>
-        // Animated counters
-        function animateCounter(element, start, end, duration, prefix = '', suffix = '') {
-            let startTimestamp = null;
-            
-            function step(timestamp) {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const current = Math.floor(progress * (end - start) + start);
-                
-                if (prefix === '$') {
-                    element.textContent = prefix + current.toLocaleString() + suffix;
-                } else {
-                    element.textContent = prefix + current.toLocaleString() + suffix;
-                }
-                
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            }
-            
-            window.requestAnimationFrame(step);
-        }
-
-        // Slow counter increase
         function incrementCounters() {
             const patronEl = document.getElementById('patronCount');
             const dollarEl = document.getElementById('dollarCount');
-            
             setInterval(() => {
-                // Add 1-3 appeals randomly
                 const currentPatrons = parseInt(patronEl.textContent.replace(/,/g, ''));
                 const newPatrons = currentPatrons + Math.floor(Math.random() * 3) + 1;
                 patronEl.textContent = newPatrons.toLocaleString();
-                
-                // Add $45-500 randomly
                 const currentDollars = parseInt(dollarEl.textContent.replace(/[$,]/g, ''));
                 const newDollars = currentDollars + Math.floor(Math.random() * 455) + 45;
                 dollarEl.textContent = '$' + newDollars.toLocaleString();
-                
-            }, Math.random() * 8000 + 3000); // Every 3-11 seconds
+            }, Math.random() * 8000 + 3000);
         }
-
-        // Start counter animation when page loads
-        window.addEventListener('load', () => {
-            setTimeout(incrementCounters, 2000);
-        });
-
-        // Smooth scroll for anchor links
+        window.addEventListener('load', () => { setTimeout(incrementCounters, 2000); });
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
     </script>
